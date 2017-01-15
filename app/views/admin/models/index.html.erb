@@ -1,0 +1,23 @@
+<%= link_to 'New Model', new_admin_model_path, class: "action_button fright" %>
+<h1 class="centralise">MODELS</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Make</th>
+      <th>Name</th>
+      <th class="centralise" width="140">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @models.each do |model| %>
+      <tr>
+        <td><%= model.make.name %></td>
+        <td><%= model.name %></td>
+        <td class="action_button"><%= link_to 'Edit', edit_admin_model_path(model) %></td>
+        <td class="action_button"><%= link_to 'Delete', admin_model_path(model), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

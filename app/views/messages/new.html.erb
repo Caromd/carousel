@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+<%= form_for @message, url: contact_path do |f| %>
+  <h1>APPLICATION DETAILS</h1>
+  <h3>Personal Information</h3>
+
+    <fieldset>
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "Name" %>
+    </fieldset>
+    <fieldset>
+      <%= f.label :email %>
+      <%= f.email_field :email, placeholder: "Email"%>
+    </fieldset>
+    <fieldset>
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: "Title"%>
+    </fieldset>
+    <fieldset>
+      <%= f.label :id %>
+      <%= f.text_field :id, placeholder: "ID Number"%>
+    </fieldset>
+    <fieldset>
+      <%= f.label :phone %>
+      <%= f.text_field :phone, placeholder: "Phone Number"%>
+    </fieldset>
+    <fieldset><%= f.text_field :mobile, placeholder: "Mobile Number"%></fieldset>
+    <fieldset><%= f.text_field :marital_status, placeholder: "Marital Status"%></fieldset>
+    <fieldset><%= f.text_field :ethnic_group, placeholder: "Ethnic Group"%></fieldset>
+    <fieldset><%= f.text_field :address1, placeholder: "Residential Address"%></fieldset>
+    <fieldset><%= f.text_field :suburb, placeholder: "Suburb"%></fieldset>
+    <fieldset><%= f.text_field :postal_code, placeholder: "Postal Code"%></fieldset>
+    <fieldset><%= f.text_field :period_at_address, placeholder: "Period at Address"%></fieldset>
+    <fieldset><%= f.text_field :residential_status, placeholder: "Residential Status"%></fieldset>
+    <fieldset>
+      <%= f.label :graduate %>
+      <%= f.collection_select :graduate, @graduate, :to_s, :to_s, {include_blank: true}, placeholder: "Graduate?" %>
+    </fieldset>
+
+  <fieldset>
+    <div class="field">
+      <%= f.submit "Send" %>
+    </div>
+  </fieldset>
+<% end %>

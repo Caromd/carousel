@@ -1,0 +1,56 @@
+
+<div id="content">
+    <div id="medCol">
+      <div id="vehicle-gallery-holder">
+        <div id="vehicle-gallery">
+          <a id="enlarge" href=#><img src=# /></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="medCol">
+      <div id="vehicle-summary">
+        <h1><%= @vehicle.model.name + " " + @vehicle.make.name + " " + @vehicle.year %></h1>
+        <p><b><%= @vehicle.description %> </b></p>
+        <p id="price">R<%= @vehicle.price %></p>
+      </div>
+    </div>
+
+    <div id="clearBoth"></div>
+
+    <div id="lrgCol">
+    	<div id="smlCol">
+        <h2>Specifications</h2>
+        <div id="general">
+          <ul id="feature-specs">
+            <li><span>Mileage:</span> <%= @vehicle.mileage %> </li>
+            <li><span>Type:</span> <%= @vehicle.vehicle_type %></li>
+            <li><span>Drive:</span> <%= @vehicle.drive %></li>
+            <li><span>Displacement:</span> <%= @vehicle.displacement %></li>
+            <li><span>Transmission:</span> <%= @vehicle.transmission %></li>
+            <li><span>Exterior:</span> <%= @vehicle.paint_colour.name %></li>
+            <li><span>Interior:</span> <%= @vehicle.interior_colour.name %></li>
+            <li><span>Stock:</span> <%= @vehicle.stock_number %></li>
+            <% if @vehicle.full_service_history? %> <li><span>Full Service History</li><% end %>
+            <% if @vehicle.low_kilometers? %> <li><span>Low Kilometres</li><% end %>
+          </ul>
+        </div>
+      </div>
+
+      <div id="smlCol">
+      <h2>Full Features</h2>
+        <div id="general">
+          <ul id="feature-specs">
+            <% if @vehicle.abs_brakes? %> <li>ABS Brakes</li> <% end %>
+            <% if @vehicle.air_conditioning? %> <li>Air Conditioning</li> <% end %>
+            <% if @vehicle.alarm? %> <li>Alarm</li> <% end %>
+            <% if @vehicle.central_locking? %> <li>Central Locking</li> <% end %>
+            <% if @vehicle.electric_windows? %> <li>Electric Windows</li> <% end %>
+            <% if @vehicle.immobilizer? %> <li>Immobiliser</li> <% end %>
+            <% if @vehicle.power_steering? %> <li>Power Steering</li> <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="clearBoth"></div>
+</div>

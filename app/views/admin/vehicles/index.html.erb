@@ -1,0 +1,29 @@
+<%= link_to 'New Vehicle', new_admin_vehicle_path, class: "action_button fright" %>
+<h1 class="centralise">VEHICLES</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Price</th>
+      <th>Stock number</th>
+      <th class="centralise" width="140">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.make.name %></td>
+        <td><%= vehicle.model.name %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= vehicle.price %></td>
+        <td><%= vehicle.stock_number %></td>
+        <td class="action_button"><%= link_to 'Edit', edit_admin_vehicle_path(vehicle) %></td>
+        <td class="action_button"><%= link_to 'Destroy', admin_vehicle_path(vehicle), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

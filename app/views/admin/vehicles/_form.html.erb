@@ -1,0 +1,167 @@
+<%= form_for [:admin, @vehicle] do |f| %>
+  <% if @vehicle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+
+      <ul>
+      <% @vehicle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1 class="centralise">MANAGE VEHICLE</h1>
+  
+  <div class= "col_12 fleft first">
+    
+    <h3 class="centralise"><strong>Details</strong></h3> 
+    
+    <fieldset class="push_both_sm">
+      <%= f.label :make_id, class: "col_3 first"%>
+      <%= f.collection_select :make_id, @makes, :id, :name, {include_blank: true}, {class: "col_8 last"} %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :model_id, class: "col_3 first" %>
+      <%= f.collection_select :model_id, @models, :id, :name, {include_blank: true}, {class: "col_8 last"} %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :derivative, class: "col_3 first" %>
+      <%= f.text_field :derivative, class: "col_8 last" %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :year, class: "col_3 first" %>
+      <%= f.text_field :year, class: "col_8 last" %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :stock_number, class: "col_3 first" %>
+      <%= f.text_field :stock_number, class: "col_8 last" %>
+    </fieldset>
+        <fieldset class="push_both_sm">
+      <%= f.label :mileage, class: "col_3 first" %>
+      <%= f.text_field :mileage, class: "col_8 last" %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :price, class: "col_3 first" %>
+      <%= f.number_field :price, class: "col_8 last" %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :description, class: "col_3 first" %>
+      <%= f.text_field :description, class: "col_8 last" %>
+    </fieldset>
+    
+    <h3 class="centralise"><strong>Specifications</strong></h3>    
+ 
+    <fieldset class="push_both_sm">
+      <%= f.label :vehicle_type, class: "col_3 first" %>
+      <%= f.collection_select :vehicle_type, @vehicle_types, :to_s, :to_s, {include_blank: true}, {class: "col_8 last"} %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :plan_id, class: "col_3 first" %>
+      <%= f.collection_select :plan_id, @plans, :id, :name, {include_blank: true}, {class: "col_8 last"} %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :paint_colour_id, class: "col_3 first" %>
+      <%= f.collection_select :paint_colour_id, @paint_colours, :id, :name, {include_blank: true}, {class: "col_8 last"} %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :interior_colour_id, class: "col_3 first" %>
+      <%= f.collection_select :interior_colour_id, @interior_colours, :id, :name, {include_blank: true}, {class: "col_8 last"} %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :fuel, class: "col_3 first" %>
+      <%= f.collection_select :fuel, @fuels, :to_s, :to_s, {include_blank: true}, {class: "col_8 last"} %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :prior_use, "Uses", class: "col_3 first" %>
+      <%= f.collection_select :prior_use, @uses, :to_s, :to_s, {include_blank: true}, {class: "col_8 last"} %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :drive, class: "col_3 first" %>
+      <%= f.collection_select :drive, @drives, :to_s, :to_s, {include_blank: true}, {class: "col_8 last"} %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :transmission, class: "col_3 first" %>
+      <%= f.collection_select :transmission, @transmissions, :to_s, :to_s, {include_blank: true}, {class: "col_8 last"} %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :displacement, class: "col_3 first" %>
+      <%= f.text_field :displacement, class: "col_8 last" %>
+    </fieldset>
+
+  </div>
+  <div class="col_9 fright last">
+    
+    <h3 class="centralise"><strong>Features</strong></h3>
+    
+    <fieldset class="push_both_sm">
+      <%= f.label :full_service_history, class: "col_5 first " %>
+      <%= f.check_box :full_service_history %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :one_owner, class: "col_5 first " %>
+      <%= f.check_box :one_owner %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :low_kilometers, class: "col_5 first " %>
+      <%= f.check_box :low_kilometers %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :abs_brakes, "ABS Brakes", class: "col_5 first " %>
+      <%= f.check_box :abs_brakes %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :air_conditioning, class: "col_5 first " %>
+      <%= f.check_box :air_conditioning %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :alarm, class: "col_5 first " %>
+      <%= f.check_box :alarm %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :alloy_wheels, class: "col_5 first " %>
+      <%= f.check_box :alloy_wheels %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :central_locking, class: "col_5 first " %>
+      <%= f.check_box :central_locking %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :electric_windows, class: "col_5 first " %>
+      <%= f.check_box :electric_windows %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :immobilizer, class: "col_5 first " %>
+      <%= f.check_box :immobilizer %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :power_steering, class: "col_5 first " %>
+      <%= f.check_box :power_steering %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :airbags, class: "col_5 first " %>
+      <%= f.check_box :airbags %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :radio, class: "col_5 first " %>
+      <%= f.check_box :radio %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :cd, "CD", class: "col_5 first " %>
+      <%= f.check_box :cd %>
+    </fieldset>
+    <fieldset class="push_both_sm">
+      <%= f.label :mp3, class: "col_5 first " %>
+      <%= f.check_box :mp3 %>
+    </fieldset>
+    
+    <hr class="push_both" />
+	  <fieldset class="large col_5 fright">
+	    <div class="actions nofloat margin_auto block bluebutton">   <%= f.submit "Save" %>  </div>		
+	  </fieldset>
+	  <div class="clear" style="clear:both;height:0px;">&nbsp;</div>
+	  <hr class="push_both" />
+    
+  </div>
+
+<% end %>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'client', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="outerWrapper">
+    <div id="dealer">
+      <div id="logo">
+        <%= link_to "CAROUSEL CARS", root_path %>
+      </div>
+      <nav>
+        <%= link_to "ABOUT", "#" %>
+      </nav>
+    </div>
+
+
+  <!--div id="header">
+    <!--div id="carBrands"><img src="assets/images/logo.jpg" /></div>
+    <!--div id="dealer"><p id="address"><span>Tel: </span>999999999</p></div>
+    <!--p id="tagline">Carousel Cars, Diep River, Cape Town</p>
+  <!--/div-->
+
+    <%= yield %>
+
+  </div>
+
+  <div id="clearFooter"></div>
+    <div id="footer">
+      <div style="text-align:left !important;"><p>247 Main Road, Diep River, Cape Town, 7945</p></div>
+      <div style="text-align:right !important;">
+        <p><span>After Hours:</span> 999 999 999</p>
+        <p><span>Tel:</span> 999 999 999<br></div>
+        <hr>
+      </div>
+  </body>
+</html>

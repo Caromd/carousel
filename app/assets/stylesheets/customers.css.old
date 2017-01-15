@@ -1,0 +1,167 @@
+
+
+/** ---------------------------------------------------------------------------------------------------- **/
+
+.result_monthly, .result_monthly span
+{
+	color: inherit !important;
+}
+.result_monthly strong
+{
+	font-size: inherit !important;
+	line-height: inherit !important;
+	letter-spacing: inherit !important;
+	text-indent: inherit !important;
+}
+
+/** ---------------------------------------------------------------------------------------------------- **/
+
+#content p.large-line-height
+{
+	line-height: 32px;
+}
+
+/** ---------------------------------------------------------------------------------------------------- **/
+
+#progres_bar
+{
+	background: #efefef;
+	width: 80%;
+	height: 30px;
+	margin: 0px auto;
+}
+#progress
+{
+	background: #014286;
+	height: 30px;
+	position: relative;
+}
+#progress:after
+{
+	content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0px 0px 30px 30px;
+    border-style: solid;
+    border-color: transparent transparent #efefef #014286;
+}
+
+.icon_customers_dash
+{
+	height: 140px;
+}
+.block_customers_dash_green h5,
+.block_customers_dash_green h5 a
+{
+	color: #82cd77 !important;
+}
+.block_customers_dash_grey h5,
+.block_customers_dash_grey h5 a,
+.block_customers_dash_grey a
+{
+	color: #ccc !important;
+	cursor: default !important;
+}
+.block_customers_dash_grey a:hover
+{
+	text-decoration: none;
+}
+
+/** ---------------------------------------------------------------------------------------------------- **/
+
+.icon_details_green {
+	background: url('customers.iconset_1.png') no-repeat -2px -3px;
+	width: 128px;
+	height: 128px;
+}
+.icon_details_blue {
+	background: url('customers.iconset_1.png') no-repeat -2px -153px;
+	width: 128px;
+	height: 128px;
+}
+.icon_details_grey {
+	background: url('customers.iconset_1.png') no-repeat -2px -303px;
+	width: 128px;
+	height: 128px;
+}
+
+.icon_verify_green {
+	background: url('customers.iconset_1.png') no-repeat -145px -6px;
+	width: 128px;
+	height: 94px;
+}
+.icon_verify_blue {
+	background: url('customers.iconset_1.png') no-repeat -145px -156px;
+	width: 128px;
+	height: 94px;
+}
+.icon_verify_grey {
+	background: url('customers.iconset_1.png') no-repeat -145px -306px;
+	width: 128px;
+	height: 94px;
+}
+
+.icon_dates_green {
+	background: url('customers.iconset_1.png') no-repeat -303px -4px;
+	width: 123px;
+	height: 123px;
+}
+.icon_dates_blue {
+	background: url('customers.iconset_1.png') no-repeat -303px -154px;
+	width: 123px;
+	height: 123px;
+}
+.icon_dates_grey {
+	background: url('customers.iconset_1.png') no-repeat -303px -304px;
+	width: 123px;
+	height: 123px;
+}
+
+.icon_sign_green {
+	background: url('customers.iconset_1.png') no-repeat -448px -17px;
+	width: 122px;
+	height: 122px;
+}
+.icon_sign_blue {
+	background: url('customers.iconset_1.png') no-repeat -448px -167px;
+	width: 122px;
+	height: 122px;
+}
+.icon_sign_grey {
+	background: url('customers.iconset_1.png') no-repeat -448px -317px;
+	width: 122px;
+	height: 122px;
+}
+
+.icon_payment_green {
+	background: url('customers.iconset_1.png') no-repeat -589px -4px;
+	width: 127px;
+	height: 121px;
+}
+.icon_payment_blue {
+	background: url('customers.iconset_1.png') no-repeat -589px -154px;
+	width: 127px;
+	height: 121px;
+}
+.icon_payment_grey {
+	background: url('customers.iconset_1.png') no-repeat -589px -304px;
+	width: 127px;
+	height: 121px;
+}
+
+.icon_checked_green {
+	background: url('customers.iconset_1.png') no-repeat -743px -4px;
+	width: 128px;
+	height: 128px;
+}
+.icon_checked_blue {
+	background: url('customers.iconset_1.png') no-repeat -743px -154px;
+	width: 128px;
+	height: 128px;
+}
+.icon_checked_grey {
+	background: url('customers.iconset_1.png') no-repeat -743px -304px;
+	width: 128px;
+	height: 128px;
+}

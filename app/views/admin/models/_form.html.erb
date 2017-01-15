@@ -1,0 +1,27 @@
+<%= form_for [:admin,@model] do |f| %>
+  <% if @model.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@model.errors.count, "error") %> prohibited this model from being saved:</h2>
+
+      <ul>
+      <% @model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1 class="centralise">MANAGE MODEL</h1><br>
+  
+  <fieldset class="push_both_m">
+    <%= f.label :make, "Make", class: "col_3 first" %>
+    <%= f.collection_select :make_id, @makes, :id, :name, {prompt: true}, {class: "col_9"} %>
+  </fieldset>
+  <fieldset class="push_both_sm">
+    <%= f.label :name, "Model Name", class: "col_3 first" %>
+    <%= f.text_field :name, class: "col_9 last" %>
+  </fieldset>
+  <fieldset class="large col_5 fright">
+    <div class="actions nofloat margin_auto block bluebutton">   <%= f.submit "Save" %>  </div>		
+  </fieldset>
+<% end %>

@@ -1,0 +1,21 @@
+<%= link_to 'New Paint Colour', new_admin_paint_colour_path, class: "action_button fright"%>
+<h1 class="centralise">PAINT COLOURS</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th class="centralise" width="140">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paint_colours.each do |paint_colour| %>
+      <tr>
+        <td><%= paint_colour.name %></td>
+        <td class="action_button"><%= link_to 'Edit', edit_admin_paint_colour_path(paint_colour) %></td>
+        <td class="action_button"><%= link_to 'Delete', admin_paint_colour_path(paint_colour), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

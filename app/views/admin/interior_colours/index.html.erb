@@ -1,0 +1,22 @@
+<%= link_to 'New Interior colour', new_admin_interior_colour_path , class: "action_button fright" %>
+<h1 class="centralise">INTERIOR COLOURS</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th class="centralise" width="140">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interior_colours.each do |interior_colour| %>
+      <tr>
+        <td><%= interior_colour.name %></td>
+        <td class="action_button"><%= link_to 'Edit', edit_admin_interior_colour_path(interior_colour) %></td>
+        <td class="action_button"><%= link_to 'Delete', admin_interior_colour_path(interior_colour), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

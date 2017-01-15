@@ -1,0 +1,21 @@
+<%= link_to 'New Plan', new_admin_plan_path, class: "action_button fright" %>
+<h1 class="centralise">PLANS</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th class="centralise" width="140">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plans.each do |plan| %>
+      <tr>
+        <td><%= plan.name %></td>
+        <td class="action_button"><%= link_to 'Edit', edit_admin_plan_path(plan) %></td>
+        <td class="action_button"><%= link_to 'Delete', admin_plan_path(plan), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

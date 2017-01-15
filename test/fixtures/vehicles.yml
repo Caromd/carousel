@@ -1,0 +1,77 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  make_id: 
+  model_id: 
+  plan_id: 
+  interior_colour_id: 
+  paint_colour_id: 
+  mileage: MyString
+  year: MyString
+  fuel: MyString
+  transmission: MyString
+  price: 1
+  stock_number: MyString
+  derivative: MyString
+  prior_use: MyString
+  vehicle_type: MyString
+  drive: MyString
+  paint_colour: MyString
+  interior_colour: MyString
+  displacement: MyString
+  fuel_type: MyString
+  transmission: MyString
+  description: MyString
+  full_service_history: false
+  one_owner: false
+  low_kilometers: false
+  abs_brakes: false
+  air_conditioning: false
+  alarm: false
+  alloy_wheels: false
+  central_locking: false
+  electric_windows: false
+  immobilizer: false
+  power_steering: false
+  airbags: false
+  radio: false
+  cd: false
+  mp3: false
+
+two:
+  make_id: 
+  model_id: 
+  plan_id: 
+  interior_colour_id: 
+  paint_colour_id: 
+  mileage: MyString
+  year: MyString
+  fuel: MyString
+  transmission: MyString
+  price: 1
+  stock_number: MyString
+  derivative: MyString
+  prior_use: MyString
+  vehicle_type: MyString
+  drive: MyString
+  paint_colour: MyString
+  interior_colour: MyString
+  displacement: MyString
+  fuel_type: MyString
+  transmission: MyString
+  description: MyString
+  full_service_history: false
+  one_owner: false
+  low_kilometers: false
+  abs_brakes: false
+  air_conditioning: false
+  alarm: false
+  alloy_wheels: false
+  central_locking: false
+  electric_windows: false
+  immobilizer: false
+  power_steering: false
+  airbags: false
+  radio: false
+  cd: false
+  mp3: false

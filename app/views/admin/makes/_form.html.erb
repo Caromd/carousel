@@ -1,0 +1,23 @@
+<%= form_for [:admin,@make] do |f| %>
+  <% if @make.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@make.errors.count, "error") %> prohibited this make from being saved:</h2>
+
+      <ul>
+      <% @make.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1 class="centralise">MANAGE MAKE</h1><br>
+  
+  <fieldset class="push_both_sm">
+    <%= f.label :name, class: "col_3 first" %>
+    <%= f.text_field :name, class: "col_9 last" %>
+  </fieldset>
+  <fieldset class="large col_5 fright">
+    <div class="actions nofloat margin_auto block bluebutton">   <%= f.submit "Save" %>  </div>		
+  </fieldset>
+<% end %>
