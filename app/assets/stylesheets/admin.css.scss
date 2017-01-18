@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 /** --------------------- BASE ---------------------- **/
 
 #content
@@ -54,13 +55,13 @@ table.bluebg,
 table.bluebg tr,
 table.bluebg tr td
 {
-	background: #e5ecf2 !important;
+	background: #006400 !important;
 }
 
 table.bluebg.trborders tr td,
 table.bluebg.trborders tr th
 {
-	border-bottom-color: #b7bdc2;
+	border-bottom-color: #006400;
 }
 
 #content table tr td.smtxt
@@ -1008,7 +1009,7 @@ table.vertical_bottom th
 }
 .blue
 {
-    color: #0064a7
+    color: #006400
 }
 .lowercase
 {
@@ -1102,7 +1103,7 @@ strong.red,
 }
 .blue
 {
-	color: #06F;
+	color: #006400;
 }
 
 span.green
@@ -2391,7 +2392,7 @@ fieldset span
 }
 #content h2
 {
-	color: #014283;
+	color: #006400;
 	font-weight: 300;
 	border: 0px;
 	font-size: 28px;
@@ -2403,7 +2404,7 @@ h3,
 #content ul.large,
 #content table td.large
 {
-	color: #014283;
+	color: #006400;
 	font-weight: 400;
 	border: 0px;
 	font-size: 20px;
@@ -2412,7 +2413,7 @@ h3,
 #content h4,
 #content h4 span
 {
-	color: #014283;
+	color: #006400;
 	font-weight: 300;
 	border: 0px;
 	font-size: 16px;
@@ -2475,7 +2476,7 @@ h3,
 	text-transform: uppercase;
 	font-size: 16px;
 	font-weight: 600;
-	color: #014283;
+	color: #006400;
 	padding: 4px 8px;
 
 	-webkit-border-radius: 6px;
@@ -2484,7 +2485,7 @@ h3,
 }
 #header #nav a.current
 {
-	background: #014283;
+	background: #006400;
 	color: white;
 }
 #header #loggedin
@@ -2499,7 +2500,7 @@ h3,
 }
 #blueline
 {
-	background: #014283;
+	background: #98A898;
 	height: 6px;
 	margin: 0px 0px 0px 0px;
 }
@@ -2591,7 +2592,7 @@ input#booknow:hover
 }
 h2
 {
-	color: #014283;
+	color: #006400;
 	font-size: 16px;
 	font-weight: normal;
 	border-bottom: 1px solid #014283;
@@ -2816,7 +2817,7 @@ body .qtipForm .qtip-close:hover
 
 #blue_nav
 {
-	background: #014283;
+	background: #002800;
 	margin-top: -6px;
 }
 #blue_nav ul
@@ -2854,7 +2855,7 @@ body .qtipForm .qtip-close:hover
 #blue_nav a.current,
 #blue_nav a:hover
 {
-	background: #34689c;
+	background: #006400;
 }
 
 #blue_nav ul li ul
@@ -2877,8 +2878,8 @@ body .qtipForm .qtip-close:hover
 	width: 100%;
 	display: block;
 	clear: both;
-	background-color: #014283;
-	border-top: 1px solid #34689c;
+	background-color: #006400;
+	border-top: 1px solid #006400;
 	list-style-type: none;
 }
 
@@ -3209,4 +3210,12 @@ table.priority_list tbody tr.task_row_open:nth-child(20) td { background: rgba(2
 .fixed_status a strong
 {
 	font-size: 16px;
+}
+
+#logo {
+	display:block;
+	width:634px;
+	height:63px;
+	background:url(logo.jpg) 0 0 no-repeat;
+	text-indent:-9999px;
 }

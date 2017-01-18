@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag attachment_url(@vehicle, :image, :fill,459, 343, format: "jpg") %>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m5">
+    <div class="card">
+      <div class="card-content white-text">
+        <h2><%= @vehicle.model.name + " " + @vehicle.make.name + " " + @vehicle.year %></h2>
+        <p><b><%= @vehicle.description %> </b></p>
+        <p id="price">R<%= @vehicle.price %></p>
+        <%= link_to 'Apply', new_message_path(@vehicle), class: "waves-effect waves-light btn-large" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-content white-text">
+        <span class="card-title">Specifications</span>
+        <ul>
+          <li>Mileage: <%= @vehicle.mileage %> </li>
+          <li>Type: <%= @vehicle.vehicle_type %></li>
+          <li>Drive: <%= @vehicle.drive %></li>
+          <li>Displacement: <%= @vehicle.displacement %></li>
+          <li>Transmission: <%= @vehicle.transmission %></li>
+          <li>Exterior: <%= @vehicle.paint_colour.name %></li>
+          <li>Interior: <%= @vehicle.interior_colour.name %></li>
+          <li>Stock: <%= @vehicle.stock_number %></li>
+          <% if @vehicle.full_service_history? %> <li>Full Service History</li><% end %>
+          <% if @vehicle.low_kilometers? %> <li>Low Kilometres</li><% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-content white-text">
+        <span class="card-title">Full Features</span>
+        <ul>
+          <% if @vehicle.abs_brakes? %> <li>ABS Brakes</li> <% end %>
+          <% if @vehicle.air_conditioning? %> <li>Air Conditioning</li> <% end %>
+          <% if @vehicle.alarm? %> <li>Alarm</li> <% end %>
+          <% if @vehicle.central_locking? %> <li>Central Locking</li> <% end %>
+          <% if @vehicle.electric_windows? %> <li>Electric Windows</li> <% end %>
+          <% if @vehicle.immobilizer? %> <li>Immobiliser</li> <% end %>
+          <% if @vehicle.power_steering? %> <li>Power Steering</li> <% end %>
+        </ul>
+      </div>
+    </div>
+</div>

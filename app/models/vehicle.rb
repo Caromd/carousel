@@ -4,4 +4,6 @@ class Vehicle < ActiveRecord::Base
   belongs_to :plan
   belongs_to :interior_colour
   belongs_to :paint_colour
+
+  attachment :image
 end

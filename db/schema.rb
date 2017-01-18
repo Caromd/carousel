@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170114110511) do
+ActiveRecord::Schema.define(version: 20170116172316) do
 
   create_table "interior_colours", force: :cascade do |t|
     t.string   "name"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20170114110511) do
     t.boolean  "mp3"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.string   "image_id"
   end
 
   add_index "vehicles", ["interior_colour_id"], name: "index_vehicles_on_interior_colour_id"

@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     @graduate = ["Yes", "No"]
     @residential_statuses = ["Owner with bond", "Owner bond free", "Tenant", "Living with Family"]
     @employment_statuses = ["Employed","Self Employed","Contractor"]
+    @titles = %w(Mr Mrs Ms Dr)
   end
 
   def create

@@ -1,7 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
 * {
 	margin:0;
 	padding:0;
-	font-family:Arial, Helvetica, sans-serif;
+	font-family:'Open Sans', Helvetica, sans-serif;
 	color:#333;
 }
 html, body {
@@ -829,11 +831,11 @@ ul {
 	color:#666;
 }
 #contact-form {
-	float:right;
-	width:200px;
+	float:left;
+	width:500px;
 }
 #contact-form input {
-	width:185px;
+	width:400px;
 	padding:3px 5px;
 }
 #contact-form textarea {
@@ -1100,4 +1102,47 @@ header {
 			}
 		}
 	}
+}
+
+form fieldset input.bluebutton,
+.action_button.bluebutton,
+.action_button.current
+{
+	color: white;
+	border: 0px;
+
+	background: #1b6db9;
+	background: -moz-linear-gradient(top,  #1b6db9 0%, #023f7e 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1b6db9), color-stop(100%,#023f7e));
+	background: -webkit-linear-gradient(top,  #1b6db9 0%,#023f7e 100%);
+	background: -o-linear-gradient(top,  #1b6db9 0%,#023f7e 100%);
+	background: -ms-linear-gradient(top,  #1b6db9 0%,#023f7e 100%);
+	background: linear-gradient(to bottom,  #1b6db9 0%,#023f7e 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b6db9', endColorstr='#023f7e',GradientType=0 );
+
+}
+#action_button
+{
+  background: #a0e8c8;
+  background-image: -webkit-linear-gradient(top, #a0e8c8, #0d8048);
+  background-image: -moz-linear-gradient(top, #a0e8c8, #0d8048);
+  background-image: -ms-linear-gradient(top, #a0e8c8, #0d8048);
+  background-image: -o-linear-gradient(top, #a0e8c8, #0d8048);
+  background-image: linear-gradient(to bottom, #a0e8c8, #0d8048);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  text-shadow: 1px 1px 3px #666666;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  color: #faf2f2;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#action_button:hover {
+  background: #326e45;
+  text-decoration: none;
 }

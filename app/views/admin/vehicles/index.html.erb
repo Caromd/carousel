@@ -22,7 +22,7 @@
         <td><%= vehicle.price %></td>
         <td><%= vehicle.stock_number %></td>
         <td class="action_button"><%= link_to 'Edit', edit_admin_vehicle_path(vehicle) %></td>
-        <td class="action_button"><%= link_to 'Destroy', admin_vehicle_path(vehicle), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="action_button"><%= link_to 'Delete', admin_vehicle_path(vehicle), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

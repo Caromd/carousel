@@ -56,7 +56,7 @@ class Admin::VehiclesController < Admin::BaseController
     end
 
     def vehicle_params
-      params.require(:vehicle).permit(:make_id, :model_id, :plan_id, :interior_colour_id, :paint_colour_id, :mileage, :year, :fuel, :transmission, :price, :stock_number, :derivative, :prior_use, :vehicle_type, :drive, :paint_colour, :interior_colour, :displacement, :fuel_type, :transmission, :description, :full_service_history, :one_owner, :low_kilometers, :abs_brakes, :air_conditioning, :alarm, :alloy_wheels, :central_locking, :electric_windows, :immobilizer, :power_steering, :airbags, :radio, :cd, :mp3)
+      params.require(:vehicle).permit(:make_id, :model_id, :plan_id, :interior_colour_id, :paint_colour_id, :mileage, :year, :fuel, :transmission, :price, :stock_number, :derivative, :prior_use, :vehicle_type, :drive, :paint_colour, :interior_colour, :displacement, :fuel_type, :transmission, :description, :full_service_history, :one_owner, :low_kilometers, :abs_brakes, :air_conditioning, :alarm, :alloy_wheels, :central_locking, :electric_windows, :immobilizer, :power_steering, :airbags, :radio, :cd, :mp3, :image)
     end
 
     def set_lists

@@ -3,7 +3,7 @@
     <div id="medCol">
       <div id="vehicle-gallery-holder">
         <div id="vehicle-gallery">
-          <a id="enlarge" href=#><img src=# /></a>
+          <a id="enlarge" href=#><%= image_tag attachment_url(@vehicle, :image, :fill,459, 343, format: "jpg") %></a>
         </div>
       </div>
     </div>
@@ -13,6 +13,7 @@
         <h1><%= @vehicle.model.name + " " + @vehicle.make.name + " " + @vehicle.year %></h1>
         <p><b><%= @vehicle.description %> </b></p>
         <p id="price">R<%= @vehicle.price %></p>
+        <p id="action_button"><%= link_to 'Apply', new_message_path(@vehicle) %></p>
       </div>
     </div>
 

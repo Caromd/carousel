@@ -1,4 +1,4 @@
-<%= form_for [:admin, @vehicle] do |f| %>
+<%= form_for [:admin, @vehicle], html: { multipart: true } do |f| %>
   <% if @vehicle.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
@@ -12,11 +12,11 @@
   <% end %>
 
   <h1 class="centralise">MANAGE VEHICLE</h1>
-  
+
   <div class= "col_12 fleft first">
-    
-    <h3 class="centralise"><strong>Details</strong></h3> 
-    
+
+    <h3 class="centralise"><strong>Details</strong></h3>
+
     <fieldset class="push_both_sm">
       <%= f.label :make_id, class: "col_3 first"%>
       <%= f.collection_select :make_id, @makes, :id, :name, {include_blank: true}, {class: "col_8 last"} %>
@@ -49,9 +49,9 @@
       <%= f.label :description, class: "col_3 first" %>
       <%= f.text_field :description, class: "col_8 last" %>
     </fieldset>
-    
-    <h3 class="centralise"><strong>Specifications</strong></h3>    
- 
+
+    <h3 class="centralise"><strong>Specifications</strong></h3>
+
     <fieldset class="push_both_sm">
       <%= f.label :vehicle_type, class: "col_3 first" %>
       <%= f.collection_select :vehicle_type, @vehicle_types, :to_s, :to_s, {include_blank: true}, {class: "col_8 last"} %>
@@ -90,10 +90,11 @@
     </fieldset>
 
   </div>
+
   <div class="col_9 fright last">
-    
+
     <h3 class="centralise"><strong>Features</strong></h3>
-    
+
     <fieldset class="push_both_sm">
       <%= f.label :full_service_history, class: "col_5 first " %>
       <%= f.check_box :full_service_history %>
@@ -154,14 +155,23 @@
       <%= f.label :mp3, class: "col_5 first " %>
       <%= f.check_box :mp3 %>
     </fieldset>
-    
+
     <hr class="push_both" />
 	  <fieldset class="large col_5 fright">
-	    <div class="actions nofloat margin_auto block bluebutton">   <%= f.submit "Save" %>  </div>		
+	    <div class="actions nofloat margin_auto block bluebutton">   <%= f.submit "Save" %>  </div>
 	  </fieldset>
 	  <div class="clear" style="clear:both;height:0px;">&nbsp;</div>
 	  <hr class="push_both" />
-    
+
+    <div class="clear" style="clear:both;height:0px;">&nbsp;</div>
+
+  </div>
+</div>
+  <div>
+    <h3 class="centralise"><strong>Image</strong></h3>
+    <%= f.attachment_field :image %>
+    <%= image_tag attachment_url(@vehicle, :image, :fill, 459, 343, format: "jpg") %>
+    <hr />
   </div>
 
 <% end %>

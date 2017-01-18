@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'client/vehicles#index'
+
+  root 'vehicles#index'
+  resources :vehicles
 
   namespace :admin do
     root 'vehicles#index'
@@ -12,12 +14,12 @@ Rails.application.routes.draw do
   	devise_for :users
   end
 
-  namespace :client do
-    root 'vehicles#index'
-    resources :vehicles
-  end
-
   resources :messages
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'
+
+  get '/services' => 'pages#services'
+  get '/howitworks' => 'pages#howitworks'
+  get '/contact' => 'pages#contact'
+
 end
