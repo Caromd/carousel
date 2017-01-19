@@ -11,85 +11,106 @@
     </div>
   <% end %>
 
-  <h1 class="centralise">MANAGE VEHICLE</h1>
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+  </script>
+  <script>
+    $('label').addClass('active')
+  </script>
+  <script>
+    $(function() {
+    Materialize.updateTextFields();
+    });
+  </script>
 
-  <div class= "col_12 fleft first">
+  <h4>MANAGE VEHICLE</h4>
 
-    <h3 class="centralise"><strong>Details</strong></h3>
+    <form class="col s16">
+      <h5><strong>Details</strong></h5>
+      <div class="row">
+        <div class="input-field col m3 s6 browser-default">
+          <%= f.collection_select :make_id, @makes, :id, :name %>
+          <%= f.label :make_id %>
+        </div>
+        <div class="input-field col m3 s6 browser-default">
+          <%= f.collection_select :model_id, @models, :id, :name %>
+          <%= f.label :model_id %>
+        </div>
+        <div class="input-field col m3 s6">
+          <%= f.text_field :derivative %>
+          <%= f.label :derivative, class: "active" %>
+        </div>
+        <div class="input-field col m3 s6">
+          <%= f.label :year, class: "active" %>
+          <%= f.text_field :year %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col m3 s6">
+          <%= f.label :stock_number, class: "active" %>
+          <%= f.text_field :stock_number %>
+        </div>
+        <div class="input-field col m3 s6">
+          <%= f.label :mileage, class: "active" %>
+          <%= f.text_field :mileage %>
+        </div>
+        <div class="input-field col m3 s6">
+          <%= f.label :price, class: "active" %>
+          <%= f.number_field :price %>
+        </div>
+        <div class="input-field col m3 s6">
+          <%= f.label :displacement, class: "active" %>
+          <%= f.text_field :displacement, class: "col_8 last" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col m12 s12">
+          <%= f.label :description, class: "active" %>
+          <%= f.text_area :description %>
+        </div>
+      </div>
+      <h5><strong>Specifications</strong></h5>
+      <div class="row">
+        <div class="input-field col m3 s6">
+          <%= f.label :vehicle_type, class: "active" %>
+          <%= f.collection_select :vehicle_type, @vehicle_types, :to_s, :to_s %>
+        </div>
+        <div class="input-field col m3 s6">
+          <%= f.label :plan_id, class: "active" %>
+          <%= f.collection_select :plan_id, @plans, :id, :name %>
+        </div>
+        <div class="input-field col m3 s6">
+          <%= f.label :paint_colour_id, class: "active" %>
+          <%= f.collection_select :paint_colour_id, @paint_colours, :id, :name %>
+        </div>
+        <div class="input-field col m3 s6">
+          <%= f.label :interior_colour_id, class: "active" %>
+          <%= f.collection_select :interior_colour_id, @interior_colours, :id, :name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col m3 s6">
+          <%= f.label :fuel, class: "active" %>
+          <%= f.collection_select :fuel, @fuels, :to_s, :to_s %>
+        </div>
+        <div class="input-field col m3 s6">
+          <%= f.label :prior_use, "Uses", class: "active" %>
+          <%= f.collection_select :prior_use, @uses, :to_s, :to_s %>
+        </div>
+        <div class="input-field col m3 s6">
+          <%= f.label :drive, class: "active" %>
+          <%= f.collection_select :drive, @drives, :to_s, :to_s %>
+        </div>
+        <div class="input-field col m3 s6">
+          <%= f.label :transmission, class: "active" %>
+          <%= f.collection_select :transmission, @transmissions, :to_s, :to_s %>
+        </div>
+      </div>
+      <div class="row">
 
-    <fieldset class="push_both_sm">
-      <%= f.label :make_id, class: "col_3 first"%>
-      <%= f.collection_select :make_id, @makes, :id, :name, {include_blank: true}, {class: "col_8 last"} %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :model_id, class: "col_3 first" %>
-      <%= f.collection_select :model_id, @models, :id, :name, {include_blank: true}, {class: "col_8 last"} %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :derivative, class: "col_3 first" %>
-      <%= f.text_field :derivative, class: "col_8 last" %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :year, class: "col_3 first" %>
-      <%= f.text_field :year, class: "col_8 last" %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :stock_number, class: "col_3 first" %>
-      <%= f.text_field :stock_number, class: "col_8 last" %>
-    </fieldset>
-        <fieldset class="push_both_sm">
-      <%= f.label :mileage, class: "col_3 first" %>
-      <%= f.text_field :mileage, class: "col_8 last" %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :price, class: "col_3 first" %>
-      <%= f.number_field :price, class: "col_8 last" %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :description, class: "col_3 first" %>
-      <%= f.text_field :description, class: "col_8 last" %>
-    </fieldset>
-
-    <h3 class="centralise"><strong>Specifications</strong></h3>
-
-    <fieldset class="push_both_sm">
-      <%= f.label :vehicle_type, class: "col_3 first" %>
-      <%= f.collection_select :vehicle_type, @vehicle_types, :to_s, :to_s, {include_blank: true}, {class: "col_8 last"} %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :plan_id, class: "col_3 first" %>
-      <%= f.collection_select :plan_id, @plans, :id, :name, {include_blank: true}, {class: "col_8 last"} %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :paint_colour_id, class: "col_3 first" %>
-      <%= f.collection_select :paint_colour_id, @paint_colours, :id, :name, {include_blank: true}, {class: "col_8 last"} %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :interior_colour_id, class: "col_3 first" %>
-      <%= f.collection_select :interior_colour_id, @interior_colours, :id, :name, {include_blank: true}, {class: "col_8 last"} %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :fuel, class: "col_3 first" %>
-      <%= f.collection_select :fuel, @fuels, :to_s, :to_s, {include_blank: true}, {class: "col_8 last"} %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :prior_use, "Uses", class: "col_3 first" %>
-      <%= f.collection_select :prior_use, @uses, :to_s, :to_s, {include_blank: true}, {class: "col_8 last"} %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :drive, class: "col_3 first" %>
-      <%= f.collection_select :drive, @drives, :to_s, :to_s, {include_blank: true}, {class: "col_8 last"} %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :transmission, class: "col_3 first" %>
-      <%= f.collection_select :transmission, @transmissions, :to_s, :to_s, {include_blank: true}, {class: "col_8 last"} %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :displacement, class: "col_3 first" %>
-      <%= f.text_field :displacement, class: "col_8 last" %>
-    </fieldset>
-
-  </div>
+      </div>
 
   <div class="col_9 fright last">
 
@@ -166,6 +187,7 @@
     <div class="clear" style="clear:both;height:0px;">&nbsp;</div>
 
   </div>
+   </form>
 </div>
   <div>
     <h3 class="centralise"><strong>Image</strong></h3>

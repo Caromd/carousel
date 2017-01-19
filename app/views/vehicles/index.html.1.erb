@@ -1,7 +1,6 @@
-<%= link_to 'New Vehicle', new_admin_vehicle_path, class: "action_button fright" %>
-<h4 class="centralise">VEHICLES</h4>
+<h3 class="centralise">VEHICLES</h3>
 
-<table>
+<table class="highlight">
   <thead>
     <tr>
       <th>Make</th>
@@ -21,8 +20,7 @@
         <td><%= vehicle.year %></td>
         <td><%= vehicle.price %></td>
         <td><%= vehicle.stock_number %></td>
-        <td class="action_button"><%= link_to 'Edit', edit_admin_vehicle_path(vehicle) %></td>
-        <td class="action_button"><%= link_to 'Delete', admin_vehicle_path(vehicle), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="action_button"><%= link_to 'Show', vehicle_path(vehicle) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -5,6 +5,7 @@
   <title>Workspace</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 
@@ -14,11 +15,11 @@
     <header>
       <nav>
         <div class="nav-wrapper">
-          <a href="vehicle.............." class="brand-logo">Logo</a>
+          <%= link_to image_tag("logo.jpg"), vehicles_path, class: "brand-logo" %>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><%= link_to "How It Works", howitworks_path %></li>
-            <li><a href="badges.html">Services</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
+            <li><%= link_to "Services", services_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
           </ul>
         </div>
       </nav>
@@ -30,18 +31,9 @@
 
     <footer class="page-footer">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-          </ul>
+        <div class="col m12 s12">
+          <p class="col m10 s12 grey-text text-lighten-4">247 Main Road, Diep River, Cape Town, 7945</p>
+          <p class="col m2 s12 grey-text text-lighten-4"><i class="small material-icons">call</i> 999 999 999</p>
         </div>
       </div>
     </footer>

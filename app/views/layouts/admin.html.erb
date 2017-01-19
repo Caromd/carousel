@@ -2,46 +2,38 @@
 <html>
 <head>
   <title>Workspace</title>
-  <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  		<div class="wrapper w">
-			<div id="header">
-				<h1><a href="/">Carousel Cars</a></h1>
-				 <div id="logo">
-        	<%= link_to "CAROUSEL CARS", root_path %>
+  <div class="container">
+
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <%= link_to "CAROUSEL ADMIN", admin_vehicles_path, class: "brand-logo" %>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><%= link_to "Vehicles", admin_vehicles_path %></li>
+						<li><%= link_to "Makes", admin_makes_path %></li>
+						<li><%= link_to "Models", admin_models_path %></li>
+						<li><%= link_to "Plans", admin_plans_path %></li>
+						<li><%= link_to "Paint Colours", admin_paint_colours_path %></li>
+						<li><%= link_to "Interior Colours", admin_interior_colours_path %></li>
+           </ul>
         </div>
-        <!--
-				<p id="nav"><a href="/admin">Admin Account</a></p>
-				<div class="clear_right"></div>
-				<div id="loggedin">You are logged in as <strong>xxxxx</strong> &nbsp;
-				<a href="#" class="fright action_button">Logout</a></div>
-				<div class="clear"></div>
-				-->
-			</div>
-			<div class="clear"></div>
-		</div>
+      </nav>
+    </header>
 
-		<div id="blueline"></div>
-		<div id="wrapper" class="wrapper w">
-		<div id="blue_nav">
-		  <ul>
-				<li><%= link_to "Vehicles", admin_vehicles_path %></li>
-				<li><%= link_to "Makes", admin_makes_path %></li>
-				<li><%= link_to "Models", admin_models_path %></li>
-				<li><%= link_to "Plans", admin_plans_path %></li>
-				<li><%= link_to "Paint Colours", admin_paint_colours_path %></li>
-				<li><%= link_to "Interior Colours", admin_interior_colours_path %></li>
-			</ul>
-
-			<div class="clear" style="clear:both;height:0px;">&nbsp;</div>
-		</div>
-<p id="notice"><%= notice %></p>
+    <main>
+      <%= yield %>
+    </main>
 
 
-<%= yield %>
+	<p id="notice"><%= notice %></p>
+
+
+	</div>
 
 </body>
 </html>
