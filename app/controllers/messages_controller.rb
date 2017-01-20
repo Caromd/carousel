@@ -2,10 +2,12 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
-    @graduate = ["Yes", "No"]
+    @marital_statuses = ["Single", "Married ANC", "Married COP"]
+    @ethnic_groups = %w(Black White Coloured Asian)
+    @graduates = ["Yes", "No"]
     @residential_statuses = ["Owner with bond", "Owner bond free", "Tenant", "Living with Family"]
     @employment_statuses = ["Employed","Self Employed","Contractor"]
-    @titles = %w(Mr Mrs Ms Dr)
+    @titles = %w(Mr Mrs Ms Dr Prof)
   end
 
   def create

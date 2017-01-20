@@ -27,173 +27,177 @@
 
   <h4>MANAGE VEHICLE</h4>
 
-    <form class="col s16">
-      <h5><strong>Details</strong></h5>
-      <div class="row">
-        <div class="input-field col m3 s6 browser-default">
-          <%= f.collection_select :make_id, @makes, :id, :name %>
-          <%= f.label :make_id %>
-        </div>
-        <div class="input-field col m3 s6 browser-default">
-          <%= f.collection_select :model_id, @models, :id, :name %>
-          <%= f.label :model_id %>
-        </div>
-        <div class="input-field col m3 s6">
-          <%= f.text_field :derivative %>
-          <%= f.label :derivative, class: "active" %>
-        </div>
-        <div class="input-field col m3 s6">
-          <%= f.label :year, class: "active" %>
-          <%= f.text_field :year %>
-        </div>
+    <!--form class="col s16"-->
+    <h5><strong>Details</strong></h5>
+
+    <div class="row">
+      <div class="input-field col m3 s6 browser-default">
+        <%= f.label :make_id, class: "active" %>
+        <%= f.collection_select :make_id, @makes, :id, :name %>
       </div>
-      <div class="row">
-        <div class="input-field col m3 s6">
-          <%= f.label :stock_number, class: "active" %>
-          <%= f.text_field :stock_number %>
-        </div>
-        <div class="input-field col m3 s6">
-          <%= f.label :mileage, class: "active" %>
-          <%= f.text_field :mileage %>
-        </div>
-        <div class="input-field col m3 s6">
-          <%= f.label :price, class: "active" %>
-          <%= f.number_field :price %>
-        </div>
-        <div class="input-field col m3 s6">
-          <%= f.label :displacement, class: "active" %>
-          <%= f.text_field :displacement, class: "col_8 last" %>
-        </div>
+      <div class="input-field col m3 s6 browser-default">
+        <%= f.label :model_id, class: "active" %>
+        <%= f.collection_select :model_id, @models, :id, :name %>
       </div>
-      <div class="row">
-        <div class="input-field col m12 s12">
-          <%= f.label :description, class: "active" %>
-          <%= f.text_area :description %>
-        </div>
+      <div class="input-field col m3 s6">
+        <%= f.text_field :derivative %>
+        <%= f.label :derivative, class: "active" %>
       </div>
-      <h5><strong>Specifications</strong></h5>
-      <div class="row">
-        <div class="input-field col m3 s6">
-          <%= f.label :vehicle_type, class: "active" %>
-          <%= f.collection_select :vehicle_type, @vehicle_types, :to_s, :to_s %>
-        </div>
-        <div class="input-field col m3 s6">
-          <%= f.label :plan_id, class: "active" %>
-          <%= f.collection_select :plan_id, @plans, :id, :name %>
-        </div>
-        <div class="input-field col m3 s6">
-          <%= f.label :paint_colour_id, class: "active" %>
-          <%= f.collection_select :paint_colour_id, @paint_colours, :id, :name %>
-        </div>
-        <div class="input-field col m3 s6">
-          <%= f.label :interior_colour_id, class: "active" %>
-          <%= f.collection_select :interior_colour_id, @interior_colours, :id, :name %>
-        </div>
+      <div class="input-field col m3 s6">
+        <%= f.label :year, class: "active" %>
+        <%= f.text_field :year %>
       </div>
-      <div class="row">
-        <div class="input-field col m3 s6">
-          <%= f.label :fuel, class: "active" %>
-          <%= f.collection_select :fuel, @fuels, :to_s, :to_s %>
-        </div>
-        <div class="input-field col m3 s6">
-          <%= f.label :prior_use, "Uses", class: "active" %>
-          <%= f.collection_select :prior_use, @uses, :to_s, :to_s %>
-        </div>
-        <div class="input-field col m3 s6">
-          <%= f.label :drive, class: "active" %>
-          <%= f.collection_select :drive, @drives, :to_s, :to_s %>
-        </div>
-        <div class="input-field col m3 s6">
-          <%= f.label :transmission, class: "active" %>
-          <%= f.collection_select :transmission, @transmissions, :to_s, :to_s %>
-        </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col m3 s6">
+        <%= f.label :stock_number, class: "active" %>
+        <%= f.text_field :stock_number %>
       </div>
-      <div class="row">
-
+      <div class="input-field col m3 s6">
+        <%= f.label :mileage, class: "active" %>
+        <%= f.text_field :mileage %>
       </div>
+      <div class="input-field col m3 s6">
+        <%= f.label :price, class: "active" %>
+        <%= f.number_field :price %>
+      </div>
+      <div class="input-field col m3 s6">
+        <%= f.label :displacement, class: "active" %>
+        <%= f.text_field :displacement, class: "col_8 last" %>
+      </div>
+    </div>
 
-  <div class="col_9 fright last">
+    <div class="row">
+      <div class="input-field col m12 s12">
+        <%= f.label :description, class: "active" %>
+        <%= f.text_field :description %>
+      </div>
+    </div>
 
-    <h3 class="centralise"><strong>Features</strong></h3>
+    <h5><strong>Specifications</strong></h5>
 
-    <fieldset class="push_both_sm">
-      <%= f.label :full_service_history, class: "col_5 first " %>
-      <%= f.check_box :full_service_history %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :one_owner, class: "col_5 first " %>
-      <%= f.check_box :one_owner %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :low_kilometers, class: "col_5 first " %>
-      <%= f.check_box :low_kilometers %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :abs_brakes, "ABS Brakes", class: "col_5 first " %>
-      <%= f.check_box :abs_brakes %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :air_conditioning, class: "col_5 first " %>
-      <%= f.check_box :air_conditioning %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :alarm, class: "col_5 first " %>
-      <%= f.check_box :alarm %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :alloy_wheels, class: "col_5 first " %>
-      <%= f.check_box :alloy_wheels %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :central_locking, class: "col_5 first " %>
-      <%= f.check_box :central_locking %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :electric_windows, class: "col_5 first " %>
-      <%= f.check_box :electric_windows %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :immobilizer, class: "col_5 first " %>
-      <%= f.check_box :immobilizer %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :power_steering, class: "col_5 first " %>
-      <%= f.check_box :power_steering %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :airbags, class: "col_5 first " %>
-      <%= f.check_box :airbags %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :radio, class: "col_5 first " %>
-      <%= f.check_box :radio %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :cd, "CD", class: "col_5 first " %>
-      <%= f.check_box :cd %>
-    </fieldset>
-    <fieldset class="push_both_sm">
-      <%= f.label :mp3, class: "col_5 first " %>
-      <%= f.check_box :mp3 %>
-    </fieldset>
+    <div class="row">
+      <div class="input-field col m3 s6">
+        <%= f.label :vehicle_type, class: "active" %>
+        <%= f.collection_select :vehicle_type, @vehicle_types, :to_s, :to_s %>
+      </div>
+      <div class="input-field col m3 s6">
+        <%= f.label :plan_id, class: "active" %>
+        <%= f.collection_select :plan_id, @plans, :id, :name %>
+      </div>
+      <div class="input-field col m3 s6">
+        <%= f.label :paint_colour_id, class: "active" %>
+        <%= f.collection_select :paint_colour_id, @paint_colours, :id, :name %>
+      </div>
+      <div class="input-field col m3 s6">
+        <%= f.label :interior_colour_id, class: "active" %>
+        <%= f.collection_select :interior_colour_id, @interior_colours, :id, :name %>
+      </div>
+    </div>
 
-    <hr class="push_both" />
-	  <fieldset class="large col_5 fright">
-	    <div class="actions nofloat margin_auto block bluebutton">   <%= f.submit "Save" %>  </div>
-	  </fieldset>
-	  <div class="clear" style="clear:both;height:0px;">&nbsp;</div>
-	  <hr class="push_both" />
+    <div class="row">
+      <div class="input-field col m3 s6">
+        <%= f.label :fuel, class: "active" %>
+        <%= f.collection_select :fuel, @fuels, :to_s, :to_s %>
+      </div>
+      <div class="input-field col m3 s6">
+        <%= f.label :prior_use, "Uses", class: "active" %>
+        <%= f.collection_select :prior_use, @uses, :to_s, :to_s %>
+      </div>
+      <div class="input-field col m3 s6">
+        <%= f.label :drive, class: "active" %>
+        <%= f.collection_select :drive, @drives, :to_s, :to_s %>
+      </div>
+      <div class="input-field col m3 s6">
+        <%= f.label :transmission, class: "active" %>
+        <%= f.collection_select :transmission, @transmissions, :to_s, :to_s %>
+      </div>
+    </div>
 
-    <div class="clear" style="clear:both;height:0px;">&nbsp;</div>
+    <h5 class="centralise"><strong>Features</strong></h5>
 
-  </div>
-   </form>
-</div>
-  <div>
-    <h3 class="centralise"><strong>Image</strong></h3>
-    <%= f.attachment_field :image %>
-    <%= image_tag attachment_url(@vehicle, :image, :fill, 459, 343, format: "jpg") %>
-    <hr />
-  </div>
+    <div class="row">
+      <div class="input-field col m2 s3">
+        <%= f.check_box :full_service_history, class: "filled-in", id: "full_service_history" %>
+        <%= f.label :full_service_history, for: "full_service_history", id: "full_service_history" %>
+      </div>
+      <div class="input-field col m2 s3">
+        <%= f.check_box :one_owner, class: "filled-in", id: "one_owner" %>
+        <%= f.label :one_owner, class: "one_owner", for: "one_owner" %>
+      </div>
+      <div class="input-field col m2 s3">
+        <%= f.check_box :low_kilometers, class: "filled-in", id: "low_kilometers" %>
+        <%= f.label :low_kilometers, class: "low_kilometers", for: "low_kilometers" %>
+      </div>
+      <div class="input-field col m2 s3">
+        <%= f.check_box :abs_brakes, class: "filled-in", id: "abs_brakes" %>
+        <%= f.label :abs_brakes, "ABS Brakes", class: "abs_brakes", for: "abs_brakes"  %>
+      </div>
+      <div class="input-field col m2 s3">
+        <%= f.check_box :air_conditioning, class: "filled-in", id: "air_conditioning" %>
+        <%= f.label :air_conditioning, class: "air_conditioning", for: "air_conditioning" %>
+      </div>
+      <div class="input-field col m2 s3">
+        <%= f.check_box :alarm, class: "filled-in", id: "alarm" %>
+        <%= f.label :alarm, class: "alarm", for: "alarm"  %>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="input-field col m2 s3">
+        <%= f.check_box :alloy_wheels, class: "filled-in", id: "alloy_wheels" %>
+        <%= f.label :alloy_wheels, class: "alloy_wheels", for: "alloy_wheels"  %>
+      </div>
+      <div class="input-field col m2 s3">
+        <%= f.check_box :central_locking, class: "filled-in", id: "central_locking" %>
+        <%= f.label :central_locking, class: "central_locking", for: "central_locking"  %>
+      </div>
+      <div class="input-field col m2 s3">
+        <%= f.check_box :electric_windows, class: "filled-in", id: "electric_windows" %>
+        <%= f.label :electric_windows, class: "electric_windows", for: "electric_windows"  %>
+      </div>
+      <div class="input-field col m2 s3">
+        <%= f.check_box :immobilizer, class: "filled-in", id: "immobilizer" %>
+        <%= f.label :immobilizer, class: "immobilizer", for: "immobilizer"  %>
+      </div>
+      <div class="input-field col m2 s3">
+        <%= f.check_box :power_steering, class: "filled-in", id: "power_steering" %>
+        <%= f.label :power_steering, class: "power_steering", for: "power_steering"  %>
+      </div>
+      <div class="input-field col m2 s3">
+        <%= f.check_box :airbags, class: "filled-in", id: "airbags" %>
+        <%= f.label :airbags, class: "airbags", for: "airbags"  %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col m2 s3">
+        <%= f.check_box :radio, class: "filled-in", id: "radio" %>
+        <%= f.label :radio, class: "radio", for: "radio"  %>
+      </div>
+      <div class="input-field col m2 s3">
+        <%= f.check_box :cd, class: "filled-in", id: "cd" %>
+        <%= f.label :cd, "CD", class: "cd", for: "cd"  %>
+      </div>
+      <div class="input-field col m2 s3">
+        <%= f.check_box :mp3, class: "filled-in", id: "mp3" %>
+        <%= f.label :mp3, class: "mp3", for: "mp3"  %>
+      </div>
+    </div>
+
+   <!--/form-->
+    <div class="row">
+      <div class="col s12">
+        <h5 class="centralise"><strong>Image</strong></h5>
+        <%= f.attachment_field :image %>
+        <%= image_tag attachment_url(@vehicle, :image, :fill, 459, 343, format: "jpg") %>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+    <button class="waves-effect waves-light btn-large">
+      <%= f.submit "Save" %>
+    </button>
 <% end %>
