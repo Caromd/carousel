@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<script>
+  $( document ).ready(function(){})
+    $(".button-collapse").sideNav();
+</script>
 
 <head>
   <title>Workspace</title>
@@ -14,9 +18,17 @@
 
     <header>
       <nav>
-        <div class="nav-wrapper grey lighten-3">
-          <%= link_to image_tag("logo.jpg"), vehicles_path, class: "brand-logo" %>
+        <div class="nav-wrapper grey lighten-3 z-depth-4">
+          <!--%= link_to image_tag("logo.jpg"), vehicles_path, class: "brand-logo" %-->
+          <%= link_to "CAROUSEL", vehicles_path, class: "brand-logo red-text text-darken-4 text-extra-large text-bold center" %>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons grey darken-4">menu</i></a>
+
           <ul id="nav-mobile" class="right hide-on-med-and-down grey darken-1">
+            <li><%= link_to "How It Works", howitworks_path %></li>
+            <li><%= link_to "Services", services_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
             <li><%= link_to "How It Works", howitworks_path %></li>
             <li><%= link_to "Services", services_path %></li>
             <li><%= link_to "Contact", contact_path %></li>

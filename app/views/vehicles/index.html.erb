@@ -1,8 +1,42 @@
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+  </script>
+  <script>
+    $('label').addClass('active')
+  </script>
+<br>
+
+
+  <div class="card z-depth-4 ">
+<%= search_form_for @q do |f| %>
+<div class="row valign-wrapper">
+    <div class="input-field col m2 s3">
+      <%= f.label :price_lteq, "Price (less than)", class: "active" %>
+      <%= f.search_field :price_lteq %>
+    </div>
+    <div class="input-field col m2 s3">
+      <%= f.label :mileage_lteq, "Mileage (less than)",  class: "active" %>
+      <%= f.search_field :mileage_lteq %>
+    </div>
+    <div class="input-field col m2 s3">
+      <%= f.label :year_gteq, "Year (from)" , class: "active" %>
+      <%= f.search_field :year_gteq %>
+    </div>
+    <div class="valign col m2 s3">
+    <button class="waves-effect waves-light btn-large">
+      <%= f.submit "Search" %>
+    </button>
+    </div>
+</div>
+<% end %>
+</div>
 
 <% @vehicles.each do |vehicle| %>
 <div class="row">
   <div class="col s6 m4">
-    <div class="card">
+    <div class="card z-depth-4">
       <div class="card-image">
         <%= image_tag attachment_url(vehicle, :image, format: "jpg") %>
         <span class="card-title"><%= vehicle.make.name + " " + vehicle.model.name + " " + vehicle.year %></span>

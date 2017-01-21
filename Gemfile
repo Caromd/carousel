@@ -29,6 +29,7 @@ gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 gem 'materialize-sass'
 gem 'jquery-turbolinks'
+gem 'ransack', '~> 1.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

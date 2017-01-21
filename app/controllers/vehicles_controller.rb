@@ -4,7 +4,10 @@ class VehiclesController < ApplicationController
   before_action :set_lists, only: [:new, :edit]
 
   def index
-    @vehicles = Vehicle.all
+    #@vehicles = Vehicle.all
+    @q = Vehicle.ransack(params[:q])
+    @vehicles = @q.result(distinct: true)
+    @prices = %w(50000 100000 150000)
   end
 
   def show
