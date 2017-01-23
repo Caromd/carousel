@@ -1,11 +1,11 @@
-<%= link_to 'New Plan', new_admin_plan_path, class: "action_button fright" %>
-<h1 class="centralise">PLANS</h1>
+<%= link_to 'New Plan', new_admin_plan_path, class: "waves-effect indigo darken-2 btn" %>
+<h4>PLANS</h4>
 
-<table>
+<table class="highlight">
   <thead>
     <tr>
       <th>Name</th>
-      <th class="centralise" width="140">Actions</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -13,8 +13,8 @@
     <% @plans.each do |plan| %>
       <tr>
         <td><%= plan.name %></td>
-        <td class="action_button"><%= link_to 'Edit', edit_admin_plan_path(plan) %></td>
-        <td class="action_button"><%= link_to 'Delete', admin_plan_path(plan), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_admin_plan_path(plan), class: "waves-effect indigo darken-2 btn" %></td>
+        <td><%= link_to 'Delete', admin_plan_path(plan), class: "waves-effect indigo darken-2 btn", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

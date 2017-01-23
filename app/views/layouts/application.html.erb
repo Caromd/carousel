@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html>
-<script>
-  $( document ).ready(function(){})
-    $(".button-collapse").sideNav();
-</script>
 
 <head>
   <title>Workspace</title>
@@ -14,24 +10,24 @@
 </head>
 
 <body>
+  <script>
+    $( document ).ready(function) block
+      $(".dropdown-button").dropdown();
+  </script>
   <div class="container">
-
     <header>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><%= link_to "How It Works", howitworks_path, class: "grey-text text-darken-4" %></li>
+        <li><%= link_to "Services", services_path, class: "grey-text text-darken-4" %></li>
+        <li><%= link_to "Contact", contact_path, class: "grey-text text-darken-4" %></li>
+        <li><%= link_to "Vehicles", vehicles_path, class: "grey-text text-darken-4" %></li>
+      </ul>
       <nav>
         <div class="nav-wrapper grey lighten-3 z-depth-4">
-          <!--%= link_to image_tag("logo.jpg"), vehicles_path, class: "brand-logo" %-->
-          <%= link_to "CAROUSEL", vehicles_path, class: "brand-logo red-text text-darken-4 text-extra-large text-bold center" %>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons grey darken-4">menu</i></a>
-
-          <ul id="nav-mobile" class="right hide-on-med-and-down grey darken-1">
-            <li><%= link_to "How It Works", howitworks_path %></li>
-            <li><%= link_to "Services", services_path %></li>
-            <li><%= link_to "Contact", contact_path %></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><%= link_to "How It Works", howitworks_path %></li>
-            <li><%= link_to "Services", services_path %></li>
-            <li><%= link_to "Contact", contact_path %></li>
+          <%= link_to "CAROUSEL", vehicles_path, class: "brand-logo red-text text-darken-4 text-extra-large text-bold" %>
+          <ul class="right">
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-button red-text text-darken-4" href="#!" data-activates="dropdown1">MENU<i class="material-icons right">arrow_drop_down</i></a></li>
           </ul>
         </div>
       </nav>

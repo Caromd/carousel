@@ -1,11 +1,11 @@
-<%= link_to 'New Paint Colour', new_admin_paint_colour_path, class: "action_button fright"%>
-<h1 class="centralise">PAINT COLOURS</h1>
+<%= link_to 'New Paint Colour', new_admin_paint_colour_path, class: "waves-effect indigo darken-2 btn"%>
+<h4>PAINT COLOURS</h4>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th class="centralise" width="140">Actions</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -13,8 +13,8 @@
     <% @paint_colours.each do |paint_colour| %>
       <tr>
         <td><%= paint_colour.name %></td>
-        <td class="action_button"><%= link_to 'Edit', edit_admin_paint_colour_path(paint_colour) %></td>
-        <td class="action_button"><%= link_to 'Delete', admin_paint_colour_path(paint_colour), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_admin_paint_colour_path(paint_colour), class: "waves-effect indigo darken-2 btn" %></td>
+        <td><%= link_to 'Delete',  admin_paint_colour_path(paint_colour), class: "waves-effect indigo darken-2 btn", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

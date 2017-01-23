@@ -11,17 +11,29 @@
     </div>
   <% end %>
 
-  <h1 class="centralise">MANAGE MODEL</h1><br>
-  
-  <fieldset class="push_both_m">
-    <%= f.label :make, "Make", class: "col_3 first" %>
-    <%= f.collection_select :make_id, @makes, :id, :name, {prompt: true}, {class: "col_9"} %>
-  </fieldset>
-  <fieldset class="push_both_sm">
-    <%= f.label :name, "Model Name", class: "col_3 first" %>
-    <%= f.text_field :name, class: "col_9 last" %>
-  </fieldset>
-  <fieldset class="large col_5 fright">
-    <div class="actions nofloat margin_auto block bluebutton">   <%= f.submit "Save" %>  </div>		
-  </fieldset>
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+  </script>
+  <script>
+    $('label').addClass('active')
+  </script>
+
+  <h4>MANAGE MODEL</h4>
+    <div class="row">
+      <div class="input-field col m6 s12">
+        <%= f.label :make_id, class: "active" %>
+        <%= f.collection_select :make_id, @makes, :id, :name %>
+      </div>
+
+      <div class="input-field col m6 s12">
+        <%= f.label :name, class: "active" %>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+<br>
+  <button class="waves-effect waves-light btn-large">
+    <%= f.submit "Save" %>
+  </button>
 <% end %>

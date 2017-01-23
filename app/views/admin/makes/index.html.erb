@@ -1,11 +1,11 @@
-<%= link_to 'New Make', new_admin_make_path, class: "action_button fright" %>
-<h1 class="centralise">MAKES</h1>
+<%= link_to 'New Make', new_admin_make_path, class: "waves-effect indigo darken-2 btn" %>
+<h4>MAKES</h4>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th class="centralise" width="140">Actions</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -13,8 +13,8 @@
     <% @makes.each do |make| %>
       <tr>
         <td><%= make.name %></td>
-        <td class="action_button"><%= link_to 'Edit', edit_admin_make_path(make) %></td>
-        <td class="action_button"><%= link_to 'Delete', admin_make_path(make), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_admin_make_path(make), class: "waves-effect indigo darken-2 btn" %></td>
+        <td><%= link_to 'Delete', admin_make_path(make), class: "waves-effect indigo darken-2 btn", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

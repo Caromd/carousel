@@ -1,4 +1,4 @@
-<%= link_to 'New Model', new_admin_model_path, class: "action_button fright" %>
+<%= link_to 'New Model', new_admin_model_path, class: "waves-effect indigo darken-2 btn" %>
 <h1 class="centralise">MODELS</h1>
 
 <table>
@@ -6,7 +6,7 @@
     <tr>
       <th>Make</th>
       <th>Name</th>
-      <th class="centralise" width="140">Actions</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -15,8 +15,8 @@
       <tr>
         <td><%= model.make.name %></td>
         <td><%= model.name %></td>
-        <td class="action_button"><%= link_to 'Edit', edit_admin_model_path(model) %></td>
-        <td class="action_button"><%= link_to 'Delete', admin_model_path(model), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit',  edit_admin_model_path(model), class: "waves-effect indigo darken-2 btn" %></td>
+        <td><%= link_to 'Delete', admin_model_path(model), class: "waves-effect indigo darken-2 btn", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -2,22 +2,21 @@
   <% if @plan.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
-
-      <ul>
-      <% @plan.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      <ul><% @plan.errors.full_messages.each do |message| %><li><%= message %></li><% end %></ul>
     </div>
   <% end %>
 
-  <h1 class="centralise">MANAGE PLAN</h1><br>
-  
-  <fieldset class="push_both_sm">
-    <%= f.label :name, class: "col_3 first" %>
-    <%= f.text_field :name, class: "col_9 last" %>
-  </fieldset>
-	<fieldset class="large col_5 fright">
-	  <div class="actions nofloat margin_auto block bluebutton">   <%= f.submit "Save" %>  </div>		
-	</fieldset>
+  <h4 class="centralise">MANAGE PLAN</h4>
+
+  <div class="row">
+    <div class="input-field col m6 s12">
+      <%= f.label :name, class: "active" %>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <br>
+  <button class="waves-effect waves-light btn-large">
+    <%= f.submit "Save" %>
+  </button>
 <% end %>

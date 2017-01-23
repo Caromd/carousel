@@ -24,14 +24,11 @@
         </div>
       </nav>
     </header>
-
+    <% if notice %><p class="green-text text-darken-2"><%= notice %></p><% end %>
+    <% if alert %><p class="red-text text-darken-2"><%= alert %></p><% end %>
     <main>
       <%= yield %>
     </main>
-
-
-	<p id="notice"><%= notice %></p>
-
 
 	</div>
 
