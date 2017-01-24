@@ -15,60 +15,57 @@
   <h5>Personal Information</h5>
 
   <div class="row">
-    <div class="input-field col s1">
+    <div class="input-field col m1 s3">
       <%= f.label :title, "Title", class: "active" %>
       <%= f.collection_select :title, @titles, :to_s, :to_s %>
     </div>
-    <div class="input-field col s6">
+    <div class="input-field col m6 s9">
       <%= f.label :name, class: "active" %>
       <%= f.text_field :name %>
     </div>
-    <div class="input-field col s5">
+    <div class="input-field col m5 s10">
       <%= f.label :email, class: "active" %>
       <%= f.email_field :email, class: "active" %>
     </div>
   </div>
 
   <div class="row">
-    <div class="input-field col s4">
+    <div class="input-field col s4 m2">
       <%= f.text_field :id, class: "validate"%>
       <%= f.label :id, "ID Number", class: "active" %>
     </div>
-    <div class="input-field col s4">
+    <div class="input-field col s4 m2">
       <%= f.text_field :phone %>
       <%= f.label :phone, "Phone", class: "active" %>
     </div>
-    <div class="input-field col s4">
+    <div class="input-field col s4 m2">
       <%= f.text_field :mobile %>
       <%= f.label :mobile, "Mobile", class: "active" %>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="input-field col s4">
+    <div class="input-field col s4 m2">
       <%= f.collection_select :marital_status, @marital_statuses, :to_s, :to_s%>
       <%= f.label :marital_status, "Marital Status", class: "active" %>
     </div>
-    <div class="input-field col s4">
+    <div class="input-field col s4 m2">
       <%= f.collection_select :ethnic_group, @ethnic_groups, :to_s, :to_s%>
       <%= f.label :ethnic_group, "Ethnic Group", class: "active" %>
     </div>
-    <div class="input-field col s4">
+    <div class="input-field col s4 m2">
       <%= f.collection_select :graduate, @graduates, :to_s, :to_s%>
       <%= f.label :graduate, "Graduate", class: "active" %>
     </div>
   </div>
 
   <div class="row">
-    <div class="input-field col s8">
+    <div class="input-field col m8 s12">
       <%= f.text_field :address1 %>
       <%= f.label :address1, "Address", class: "active" %>
     </div>
-    <div class="input-field col s3">
+    <div class="input-field col m3 s8">
       <%= f.text_field :suburb %>
       <%= f.label :suburb, "Suburb", class: "active" %>
     </div>
-    <div class="input-field col s1">
+    <div class="input-field col m1 s4">
       <%= f.text_field :postal_code %>
       <%= f.label :postal_code, "Postal Code", class: "active" %>
     </div>
@@ -79,11 +76,90 @@
       <%= f.text_field :period_at_address %>
       <%= f.label :period_at_address, "Period at Address (Years)", class: "active" %>
     </div>
-    <div class="input-field col s4">
+    <div class="input-field col s6 m4">
       <%= f.label :residential_status, "Residential Status", class: "active" %>
       <%= f.collection_select :residential_status, @residential_statuses, :to_s, :to_s %>
     </div>
   </div>
+
+
+  <h5>Employment</h5>
+
+  <div class="row">
+    <div class="input-field col m3 s6">
+      <%= f.label :employment_status, "Status", class: "active" %>
+      <%= f.collection_select :employment_status, @employment_statuses, :to_s, :to_s %>
+    </div>
+    <div class="input-field col m2 s6">
+      <%= f.label :period_in_job, "Period in Current Job", class: "active" %>
+      <%= f.text_field :period_in_job %>
+    </div>
+    <div class="input-field col m2 s6">
+      <%= f.label :work_phone, "Work Phone Number", class: "active" %>
+      <%= f.text_field :work_phone %>
+    </div>
+    <div class="input-field col m5 s6">
+      <%= f.label :occupation, "Occupation", class: "active" %>
+      <%= f.text_field :occupation %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :employer_name_and_address, "Name and Address of Employer", class: "active" %>
+      <%= f.text_field :employer_name_and_address %>
+    </div>
+  </div>
+
+  <h5>Affordability</h5>
+
+  <div class="row">
+    <div class="input-field col m2 s4">
+      <%= f.label :gross_salary, "Gross Salary", class: "active" %>
+      <%= f.text_field :gross_salary %>
+    </div>
+    <div class="input-field col m2 s4">
+      <%= f.label :other_income, "Other Income", class: "active" %>
+      <%= f.text_field :other_income %>
+    </div>
+    <div class="input-field col m2 s4">
+      <%= f.label :nett_salary, "Nett Salary", class: "active" %>
+      <%= f.text_field :nett_salary %>
+    </div>
+    <div class="input-field col m2 s4">
+      <%= f.label :monthly_expenses, "Monthly Expenses", class: "active" %>
+      <%= f.text_field :monthly_expenses %>
+    </div>
+    <div class="input-field col m2 s4">
+      <%= f.label :rent_or_bond, "Rent/Bond Payment", class: "active" %>
+      <%= f.text_field :rent_or_bond %>
+    </div>
+  </div>
+
+  <h5>Relative/Close Friend</h5>
+
+  <div class="row">
+    <div class="input-field col m6 s12">
+      <%= f.label :relative_name, "Name", class: "active" %>
+      <%= f.text_field :relative_name %>
+    </div>
+    <div class="input-field col m3 s6">
+      <%= f.label :relative_mobile, "Mobile", class: "active" %>
+      <%= f.text_field :relative_mobile %>
+    </div>
+    <div class="input-field col m3 s6">
+      <%= f.label :relative_relationship, "Relationship", class: "active" %>
+      <%= f.text_field :relative_relationship %>
+    </div>
+    <div class="input-field col m10 s9">
+      <%= f.label :relative_residential_address, "Residential Address", class: "active" %>
+      <%= f.text_field :relative_residential_address %>
+    </div>
+    <div class="input-field col m2 s3">
+      <%= f.label :relative_post_code, "Post Code", class: "active" %>
+      <%= f.text_field :relative_post_code %>
+    </div>
+  </div>
+
 
   <button class="waves-effect waves-light btn-large">
     <%= f.submit "Send" %><i class="material-icons right">send</i>
