@@ -1,7 +1,10 @@
-<%= link_to 'New Vehicle', new_admin_vehicle_path, class: "waves-effect indigo darken-2 btn" %>
-<h4 class="centralise">VEHICLES</h4>
+<h5>VEHICLES
+<%= link_to new_admin_vehicle_path  do %>
+  <i class="material-icons">add</i>
+<% end %>
+</h5>
 
-<table>
+<table class="bordered highlight">
   <thead>
     <tr>
       <th>Make</th>
@@ -9,7 +12,6 @@
       <th>Year</th>
       <th>Price</th>
       <th>Stock number</th>
-      <th>Actions</th>
     </tr>
   </thead>
 
@@ -21,8 +23,14 @@
         <td><%= vehicle.year %></td>
         <td><%= vehicle.price %></td>
         <td><%= vehicle.stock_number %></td>
-        <td><%= link_to 'Edit', edit_admin_vehicle_path(vehicle), class: "waves-effect indigo darken-2 btn" %></td>
-        <td><%= link_to 'Delete', admin_vehicle_path(vehicle), class: "waves-effect indigo darken-2 btn", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to edit_admin_vehicle_path(vehicle) do %>
+              <i class="material-icons">edit</i>
+            <% end %>
+        </td>
+        <td><%= link_to admin_vehicle_path(vehicle), method: :delete, data: { confirm: 'Are you sure?' }  do%>
+              <i class="material-icons">delete</i>
+            <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

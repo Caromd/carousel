@@ -40,13 +40,11 @@
     <div class="card z-depth-4">
       <div class="card-image">
         <%= image_tag attachment_url(vehicle, :image, format: "jpg") %>
-        <span class="card-title"><%= vehicle.make.name + " " + vehicle.model.name +  " " + vehicle.displacement %></span>
+        <span class="card-title"><%= vehicle.make.name + " " + vehicle.model.name +  " " + vehicle.displacement + " (" + vehicle.year + ")" %></span>
       </div>
       <div class="card-content">
-        <p><b><%= vehicle.description %> </b></p>
-        <h4><% vehicle.year %></h4>
-        <h5>R<%= vehicle.price %></h5>
-        <h5><%= vehicle.mileage %> km</h5>
+        <p class="indigo-text"><b><% vehicle.year.to_s %>  <%= vehicle.description %></b></p>
+        <h5>R<%= vehicle.price %>    |    <%= vehicle.mileage %> km</h5>
       </div>
       <div class="card-action">
         <%= link_to 'Show', vehicle_path(vehicle), class: "waves-effect waves-light btn-large" %>

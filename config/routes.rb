@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   	resources :plans
   	resources :models
   	resources :makes
-  	devise_for :users
   end
 
+	devise_for :users
   resources :messages
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'

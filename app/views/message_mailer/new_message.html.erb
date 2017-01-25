@@ -6,7 +6,43 @@
   <body>
     <h1>APPLICATION DETAILS</h1>
     <h3>PERSONAL INFORMATION</h3>
+    <p>Name: <%= @message.name %> </p>
+    <p>Email: <%= @message.email %> </p>
     <p>Title: <%= @message.title %> </p>
     <p>ID Number: <%= @message.id %> </p>
+    <p>Phone: <%= @message.phone %> </p>
+    <p>Mobile: <%= @message.mobile %> </p>
+    <p>Marital Status: <%= @message.marital_status %> </p>
+    <p>Ethnic Group: <%= @message.ethnic_group %> </p>
+    <p>Graduate?: <%= @message.graduate %> </p>
+
+    <h3>ADDRESS</h3>
+    <p>: <%= @message.address1 %> </p>
+    <p>: <%= @message.suburb %> </p>
+    <p>: <%= @message.postal_code %> </p>
+    <p>: <%= @message.period_at_address %> </p>
+    <p>: <%= @message.residential_status %> </p>
+
+    <h3>EMPLOYMENT</h3>
+    <p>: <%= @message.employment_status %> </p>
+    <p>: <%= @message.period_in_job %> </p>
+    <p>: <%= @message.work_phone %> </p>
+    <p>: <%= @message.employer_name_and_address %> </p>
+    <p>: <%= @message.occupation %> </p>
+
+    <h3>AFFORDABILITY</h3>
+    <p>: <%= @message.gross_salary %> </p>
+    <p>: <%= @message.other_income %> </p>
+    <p>: <%= @message.nett_salary %> </p>
+    <p>: <%= @message.monthly_expenses %> </p>
+    <p>: <%= @message.rent_or_bond %> </p>
+
+    <h3>RELATIVE/CLOSE FRIEND</h3>
+    <p>: <%= @message.relative_name %> </p>
+    <p>: <%= @message.relative_mobile %> </p>
+    <p>: <%= @message.relative_residential_address %> </p>
+    <p>: <%= @message.relative_post_code %> </p>
+    <p>: <%= @message.relative_relationship %> </p>
+
   </body>
 </html>
