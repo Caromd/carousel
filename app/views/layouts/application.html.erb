@@ -33,6 +33,9 @@
       </nav>
     </header>
 
+    <% if notice %><p class="green-text text-darken-2"><%= notice %></p><% end %>
+    <% if alert %><p class="red-text text-darken-2"><%= alert %></p><% end %>
+
     <main>
       <%= yield %>
     </main>
@@ -41,7 +44,7 @@
       <div class="row">
         <div class="col m12 s12">
           <p class="col m10 s12 grey-text text-lighten-4">247 Main Road, Diep River, Cape Town, 7945</p>
-          <p class="col m2 s12 grey-text text-lighten-4"><i class="small material-icons">call</i> 999 999 999</p>
+          <p class="col m2 s12 grey-text text-lighten-4"> 021 713 0444 <i class="tiny material-icons">call</i></p>
         </div>
       </div>
     </footer>

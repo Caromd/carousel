@@ -1,3 +1,4 @@
+<div class="container" >
 <%= form_for [:admin,@paint_colour] do |f| %>
   <% if @paint_colour.errors.any? %>
     <div id="error_explanation">
@@ -6,17 +7,17 @@
     </div>
   <% end %>
 
-  <h4>MANAGE PAINT COLOUR</h4>
+  <h5>MANAGE PAINT COLOUR</h5>
 
   <div class="row">
-    <div class="input-field col m6 s12">
+    <div class="input-field col s12">
       <%= f.label :name, class: "active" %>
       <%= f.text_field :name %>
     </div>
   </div>
 
-  <br>
-  <button class="waves-effect waves-light btn-large">
+  <button class="waves-effect waves-light btn">
     <%= f.submit "Save" %>
   </button>
 <% end %>
+</div>

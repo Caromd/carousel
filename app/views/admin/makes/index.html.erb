@@ -17,7 +17,7 @@
       <tr>
         <td><%= make.name %></td>
         <td><%= link_to edit_admin_make_path(make) do %><i class="material-icons">edit</i><% end %></td>
-        <td><%= link_to admin_make_path(make), method: :delete, data: { confirm: 'Are you sure?' } do %><i class="material-icons">add</i><% end %></td>
+        <td><%= link_to admin_make_path(make), method: :delete, data: { confirm: 'Are you sure?' } do %><i class="material-icons">delete</i><% end %></td>
       </tr>
     <% end %>
   </tbody>

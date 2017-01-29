@@ -1,23 +1,23 @@
+<div class="container" >
 <%= form_for [:admin,@interior_colour] do |f| %>
   <% if @interior_colour.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@interior_colour.errors.count, "error") %> prohibited this interior_colour from being saved:</h2>
-
-      <ul>
-      <% @interior_colour.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      <ul><% @interior_colour.errors.full_messages.each do |message| %><li><%= message %></li><% end %></ul>
     </div>
   <% end %>
 
-	<h1 class="centralise">MANAGE INTERIOR COLOUR</h1><br>
-	
-  <fieldset class="push_both_sm">
-    <%= f.label :name, class: "col_3 first" %>
-    <%= f.text_field :name, class: "col_9 last" %>
-  </fieldset>
-  <fieldset class="large col_5 fright">
-    <div class="actions nofloat margin_auto block bluebutton">   <%= f.submit "Save" %>  </div>		
-  </fieldset>
+	<h5>MANAGE INTERIOR COLOUR</h5><br>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :name, class: "active" %>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <button class="waves-effect waves-light btn">
+    <%= f.submit "Save" %>
+  </button>
 <% end %>
+</div>

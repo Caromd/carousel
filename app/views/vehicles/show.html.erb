@@ -9,11 +9,13 @@
   <div class="col s12 m5">
     <div class="card">
       <div class="card-content">
-        <h3><%= @vehicle.make.name + " " + @vehicle.model.name %></h3>
+        <h3><%= @vehicle.make.name + " " + @vehicle.model.name +  " " + @vehicle.displacement  + " " + @vehicle.derivative %></h3>
         <h3><%= @vehicle.year %></h3>
         <p><b><%= @vehicle.description %> </b></p>
-        <h4>R<%= @vehicle.price %></h4>
-        <%= link_to 'Apply', new_message_path(@vehicle), class: "waves-effect waves-light btn-large" %>
+        <h5><%= @vehicle.mileage %> km</h5>
+        <h4 class="red-text text-darken-4">R <%= @vehicle.price %></h4>
+        <br>
+        <%= link_to 'Apply', new_message_path(vehicle_id: @vehicle.id), class: "waves-effect waves-light btn-large" %>
       </div>
     </div>
   </div>
@@ -25,16 +27,14 @@
       <div class="card-content white-text">
         <span class="card-title">Specifications</span>
         <ul class="collection">
-          <li class="collection-item grey-text">Mileage: <%= @vehicle.mileage %> km </li>
-          <li class="collection-item grey-text">Type: <%= @vehicle.vehicle_type %></li>
-          <li class="collection-item grey-text">Drive: <%= @vehicle.drive %></li>
-          <li class="collection-item grey-text">Displacement: <%= @vehicle.displacement %></li>
-          <li class="collection-item grey-text">Transmission: <%= @vehicle.transmission %></li>
-          <li class="collection-item grey-text">Exterior: <%= @vehicle.paint_colour.name %></li>
-          <li class="collection-item grey-text">Interior: <%= @vehicle.interior_colour.name %></li>
-          <li class="collection-item grey-text">Stock: <%= @vehicle.stock_number %></li>
+          <li class="collection-item grey-text"><%= @vehicle.vehicle_type %></li>
+          <li class="collection-item grey-text"><%= @vehicle.drive %></li>
+          <li class="collection-item grey-text"><%= @vehicle.transmission %></li>
+          <li class="collection-item grey-text"><%= @vehicle.paint_colour.name %> exterior</li>
+          <li class="collection-item grey-text"><%= @vehicle.interior_colour.name %> interior</li>
           <% if @vehicle.full_service_history? %> <li class="collection-item grey-text">Full Service History</li><% end %>
           <% if @vehicle.low_kilometers? %> <li class="collection-item grey-text">Low Kilometres</li><% end %>
+          <li class="collection-item grey-text">Stock number: <%= @vehicle.stock_number %></li>
         </ul>
       </div>
     </div>
@@ -51,6 +51,9 @@
           <% if @vehicle.electric_windows? %> <li class="collection-item grey-text">Electric Windows</li> <% end %>
           <% if @vehicle.immobilizer? %> <li class="collection-item grey-text">Immobiliser</li> <% end %>
           <% if @vehicle.power_steering? %> <li class="collection-item grey-text">Power Steering</li> <% end %>
+          <% if @vehicle.radio? %> <li class="collection-item grey-text">Radio</li> <% end %>
+          <% if @vehicle.cd? %> <li class="collection-item grey-text">CD</li> <% end %>
+          <% if @vehicle.mp3? %> <li class="collection-item grey-text">MP3</li> <% end %>
         </ul>
       </div>
     </div>

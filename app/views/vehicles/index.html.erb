@@ -9,45 +9,46 @@
 <br>
 
 
-  <div class="card z-depth-4 ">
+<div class="card z-depth-4 ">
 <%= search_form_for @q do |f| %>
-<div class="row valign-wrapper">
-    <div class="input-field col m2 s3">
+  <div class="row valign-wrapper">
+    <div class="input-field col s12 m3">
       <%= f.label :price_lteq, "Price (less than)", class: "active" %>
       <%= f.search_field :price_lteq %>
     </div>
-    <div class="input-field col m2 s3">
+    <div class="input-field col s12 m3">
       <%= f.label :mileage_lteq, "Mileage (less than)",  class: "active" %>
       <%= f.search_field :mileage_lteq %>
     </div>
-    <div class="input-field col m2 s3">
+    <div class="input-field col s12 m3">
       <%= f.label :year_gteq, "Year (from)" , class: "active" %>
       <%= f.search_field :year_gteq %>
     </div>
-    <div class="valign col m2 s3">
-    <button class="waves-effect waves-light btn-large">
+    <div class="valign col m2 s6">
+    <button class="waves-effect waves-light btn">
       <%= f.submit "Search" %>
     </button>
     </div>
-</div>
+  </div>
 <% end %>
 </div>
 
 <div class="row">
 <% @vehicles.each do |vehicle| %>
 
-  <div class="col s6 m4">
+  <div class="col s12 m4">
     <div class="card z-depth-4">
       <div class="card-image">
         <%= image_tag attachment_url(vehicle, :image, format: "jpg") %>
-        <span class="card-title"><%= vehicle.make.name + " " + vehicle.model.name +  " " + vehicle.displacement + " (" + vehicle.year + ")" %></span>
+        <span class="card-title"><%= vehicle.make.name + " " + vehicle.model.name +  " " + vehicle.displacement  + " " + vehicle.derivative + " " + vehicle.year  %></span>
       </div>
       <div class="card-content">
-        <p class="indigo-text"><b><% vehicle.year.to_s %>  <%= vehicle.description %></b></p>
-        <h5>R<%= vehicle.price %>    |    <%= vehicle.mileage %> km</h5>
+        <p class="indigo-text"><b><%= vehicle.description %></b></p>
+        <h5 class="red-text text-darken-4">R <%= vehicle.price %><h5>
+        <h6><%= vehicle.mileage %> km</h6>
       </div>
       <div class="card-action">
-        <%= link_to 'Show', vehicle_path(vehicle), class: "waves-effect waves-light btn-large" %>
+        <%= link_to 'Show', vehicle_path(vehicle), class: "waves-effect waves-light btn" %>
       </div>
     </div>
   </div>

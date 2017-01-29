@@ -12,54 +12,93 @@
 
   <br>
   <h4>APPLICATION DETAILS</h4>
+
+  <h5>Vehicle Information</h5>
+  <div class="row">
+    <div class="input-field col m3 s6">
+      <%= f.label :make, class: "active" %>
+      <%= f.text_field :make, value: @vehicle ? @vehicle.make.name : nil %>
+    </div>
+    <div class="input-field col m3 s6">
+      <%= f.label :model, class: "active" %>
+      <%= f.text_field :model, value: @vehicle ? @vehicle.model.name : nil %>
+    </div>
+    <div class="input-field col m2 s3">
+      <%= f.label :colour, "Colour", class: "active" %>
+      <%= f.text_field :colour, value: @vehicle ? @vehicle.paint_colour.name : nil %>
+    </div>
+    <div class="input-field col m2 s3">
+      <%= f.label :year, class: "active" %>
+      <%= f.text_field :year, value: @vehilce ? @vehicle.year : nil %>
+    </div>
+    <div class="input-field col m2 s3">
+      <%= f.label :mileage, class: "active" %>
+      <%= f.text_field :mileage, value: @vehicle ? @vehicle.mileage : nil %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col m3 s4">
+      <%= f.label :stock_number, class: "active" %>
+      <%= f.text_field :stock_number, value: @vehicle ? @vehicle.stock_number : nil %>
+    </div>
+    <div class="input-field col m3 s4">
+      <%= f.label :price, class: "active" %>
+      <%= f.text_field :price, value: @vehicle ? @vehicle.price : nil%>
+    </div>
+    <div class="input-field col m3 s4">
+      <%= f.label :deposit, "Deposit Amount", class: "active" %>
+      <%= f.text_field :deposit %>
+    </div>
+  </div>
+
   <h5>Personal Information</h5>
 
   <div class="row">
     <div class="input-field col m1 s3">
-      <%= f.label :title, "Title", class: "active" %>
-      <%= f.collection_select :title, @titles, :to_s, :to_s %>
+      <%= f.label :title, "*Title", class: "active indigo-text" %>
+      <%= f.collection_select(:title, @titles, :to_s, :to_s) %>
     </div>
     <div class="input-field col m6 s9">
-      <%= f.label :name, class: "active" %>
-      <%= f.text_field :name %>
+      <%= f.label :name, "*Full Name", class: "active indigo-text" %>
+      <%= f.text_field :name, required: true %>
     </div>
     <div class="input-field col m5 s10">
-      <%= f.label :email, class: "active" %>
-      <%= f.email_field :email, class: "active" %>
+      <%= f.label :email, "*Email", class: "active indigo-text" %>
+      <%= f.email_field :email, class: "validate", required: true %>
     </div>
   </div>
 
   <div class="row">
     <div class="input-field col s4 m2">
-      <%= f.text_field :id, class: "validate"%>
-      <%= f.label :id, "ID Number", class: "active" %>
+      <%= f.text_field :id, required: true%>
+      <%= f.label :id, "*ID Number", class: "active indigo-text" %>
     </div>
     <div class="input-field col s4 m2">
-      <%= f.text_field :phone %>
-      <%= f.label :phone, "Phone", class: "active" %>
+      <%= f.text_field :phone , required: true %>
+      <%= f.label :phone, "*Phone", class: "active indigo-text" %>
     </div>
     <div class="input-field col s4 m2">
       <%= f.text_field :mobile %>
       <%= f.label :mobile, "Mobile", class: "active" %>
     </div>
     <div class="input-field col s4 m2">
-      <%= f.collection_select :marital_status, @marital_statuses, :to_s, :to_s%>
-      <%= f.label :marital_status, "Marital Status", class: "active" %>
+      <%= f.label :marital_status, "*Marital Status", class: "active indigo-text" %>
+      <%= f.collection_select(:marital_status, @marital_statuses, :to_s, :to_s)%>
     </div>
     <div class="input-field col s4 m2">
-      <%= f.collection_select :ethnic_group, @ethnic_groups, :to_s, :to_s%>
       <%= f.label :ethnic_group, "Ethnic Group", class: "active" %>
+      <%= f.collection_select :ethnic_group, @ethnic_groups, :to_s, :to_s, :include_blank => true%>
     </div>
     <div class="input-field col s4 m2">
-      <%= f.collection_select :graduate, @graduates, :to_s, :to_s%>
       <%= f.label :graduate, "Graduate", class: "active" %>
+      <%= f.collection_select :graduate, @graduates, :to_s, :to_s, :include_blank => true%>
     </div>
   </div>
 
   <div class="row">
     <div class="input-field col m8 s12">
-      <%= f.text_field :address1 %>
-      <%= f.label :address1, "Address", class: "active" %>
+      <%= f.text_field :address1, required: true %>
+      <%= f.label :address1, "*Address", class: "active indigo-text" %>
     </div>
     <div class="input-field col m3 s8">
       <%= f.text_field :suburb %>
@@ -72,23 +111,22 @@
   </div>
 
   <div class="row">
-    <div class="input-field col s4">
-      <%= f.text_field :period_at_address %>
-      <%= f.label :period_at_address, "Period at Address (Years)", class: "active" %>
+    <div class="input-field col s3">
+      <%= f.text_field :period_at_address, required: true %>
+      <%= f.label :period_at_address, "*Period at Address (Years)", class: "active indigo-text" %>
     </div>
     <div class="input-field col s6 m4">
       <%= f.label :residential_status, "Residential Status", class: "active" %>
-      <%= f.collection_select :residential_status, @residential_statuses, :to_s, :to_s %>
+      <%= f.collection_select(:residential_status, @residential_statuses, :to_s, :to_s, {:include_blank => true}) %>
     </div>
   </div>
-
 
   <h5>Employment</h5>
 
   <div class="row">
     <div class="input-field col m3 s6">
       <%= f.label :employment_status, "Status", class: "active" %>
-      <%= f.collection_select :employment_status, @employment_statuses, :to_s, :to_s %>
+      <%= f.collection_select :employment_status, @employment_statuses, :to_s, :to_s, :include_blank => true %>
     </div>
     <div class="input-field col m2 s6">
       <%= f.label :period_in_job, "Period in Current Job", class: "active" %>
@@ -139,7 +177,7 @@
 
   <div class="row">
     <div class="input-field col m6 s12">
-      <%= f.label :relative_name, "Name", class: "active" %>
+      <%= f.label :relative_name, "Full Name", class: "active" %>
       <%= f.text_field :relative_name %>
     </div>
     <div class="input-field col m3 s6">

@@ -25,19 +25,19 @@
     });
   </script>
 
-  <h4>MANAGE VEHICLE</h4>
+  <h5>MANAGE VEHICLE</h5>
 
     <!--form class="col s16"-->
-    <h5><strong>Details</strong></h5>
+    <h5>Details</h5>
 
     <div class="row">
       <div class="input-field col m3 s6 browser-default">
         <%= f.label :make_id, class: "active" %>
-        <%= f.collection_select :make_id, @makes, :id, :name %>
+        <%= f.collection_select :make_id, @makes, :id, :name, {:include_blank => true}, {id: "vehicle_make_id"} %>
       </div>
       <div class="input-field col m3 s6 browser-default">
         <%= f.label :model_id, class: "active" %>
-        <%= f.collection_select :model_id, @models, :id, :name %>
+        <%= f.grouped_collection_select :model_id, Make.order(:name), :models, :name, :id, :name, {include_blank: true}, {id: "vehicle_model_id"} %>
       </div>
       <div class="input-field col m3 s6">
         <%= f.text_field :derivative %>
@@ -75,47 +75,47 @@
       </div>
     </div>
 
-    <h5><strong>Specifications</strong></h5>
+    <h5>Specifications</h5>
 
     <div class="row">
       <div class="input-field col m3 s6">
         <%= f.label :vehicle_type, class: "active" %>
-        <%= f.collection_select :vehicle_type, @vehicle_types, :to_s, :to_s %>
+        <%= f.collection_select :vehicle_type, @vehicle_types, :to_s, :to_s, :include_blank => true %>
       </div>
       <div class="input-field col m3 s6">
         <%= f.label :plan_id, class: "active" %>
-        <%= f.collection_select :plan_id, @plans, :id, :name %>
+        <%= f.collection_select :plan_id, @plans, :id, :name, :include_blank => true %>
       </div>
       <div class="input-field col m3 s6">
         <%= f.label :paint_colour_id, class: "active" %>
-        <%= f.collection_select :paint_colour_id, @paint_colours, :id, :name %>
+        <%= f.collection_select :paint_colour_id, @paint_colours, :id, :name, :include_blank => true %>
       </div>
       <div class="input-field col m3 s6">
         <%= f.label :interior_colour_id, class: "active" %>
-        <%= f.collection_select :interior_colour_id, @interior_colours, :id, :name %>
+        <%= f.collection_select :interior_colour_id, @interior_colours, :id, :name, :include_blank => true %>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col m3 s6">
         <%= f.label :fuel, class: "active" %>
-        <%= f.collection_select :fuel, @fuels, :to_s, :to_s %>
+        <%= f.collection_select :fuel, @fuels, :to_s, :to_s, :include_blank => true %>
       </div>
       <div class="input-field col m3 s6">
         <%= f.label :prior_use, "Uses", class: "active" %>
-        <%= f.collection_select :prior_use, @uses, :to_s, :to_s %>
+        <%= f.collection_select :prior_use, @uses, :to_s, :to_s, :include_blank => true %>
       </div>
       <div class="input-field col m3 s6">
         <%= f.label :drive, class: "active" %>
-        <%= f.collection_select :drive, @drives, :to_s, :to_s %>
+        <%= f.collection_select :drive, @drives, :to_s, :to_s, :include_blank => true %>
       </div>
       <div class="input-field col m3 s6">
         <%= f.label :transmission, class: "active" %>
-        <%= f.collection_select :transmission, @transmissions, :to_s, :to_s %>
+        <%= f.collection_select :transmission, @transmissions, :to_s, :to_s, :include_blank => true %>
       </div>
     </div>
 
-    <h5 class="centralise"><strong>Features</strong></h5>
+    <h5>Features</h5>
 
     <div class="row">
       <div class="input-field col m2 s3">
@@ -189,7 +189,7 @@
    <!--/form-->
     <div class="row">
       <div class="col s12">
-        <h5 class="centralise"><strong>Image</strong></h5>
+        <h5>Image</h5>
         <%= f.attachment_field :image %>
         <%= image_tag attachment_url(@vehicle, :image, :fill, 459, 343, format: "jpg") %>
       </div>

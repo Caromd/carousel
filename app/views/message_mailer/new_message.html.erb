@@ -4,45 +4,56 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>APPLICATION DETAILS</h1>
+    <h2>APPLICATION DETAILS</h2>
+
+    <h3>VEHICLE INFORMATION</h3>
+    <p><b>Make:</b> <%= @message.make %> </p>
+    <p><b>Model:</b> <%= @message.model %> </p>
+    <p><b>Stock Number:</b> <%= @message.stock_number %> </p>
+    <p><b>Year:</b> <%= @message.year %> </p>
+    <p><b>Colour:</b> <%= @message.colour %> </p>
+    <p><b>Mileage:</b> <%= @message.mileage %> </p>
+    <p><b>Price:</b> <%= @message.price %> </p>
+    <p><b>Deposit:</b> <%= @message.deposit %> </p>
+
     <h3>PERSONAL INFORMATION</h3>
-    <p>Name: <%= @message.name %> </p>
-    <p>Email: <%= @message.email %> </p>
-    <p>Title: <%= @message.title %> </p>
-    <p>ID Number: <%= @message.id %> </p>
-    <p>Phone: <%= @message.phone %> </p>
-    <p>Mobile: <%= @message.mobile %> </p>
-    <p>Marital Status: <%= @message.marital_status %> </p>
-    <p>Ethnic Group: <%= @message.ethnic_group %> </p>
-    <p>Graduate?: <%= @message.graduate %> </p>
+    <p><b>Name:</b> <%= @message.name %> </p>
+    <p><b>Email:</b> <%= @message.email %> </p>
+    <p><b>Title:</b> <%= @message.title %> </p>
+    <p><b>ID Number:</b> <%= @message.id %> </p>
+    <p><b>Phone:</b> <%= @message.phone %> </p>
+    <p><b>Mobile:</b> <%= @message.mobile %> </p>
+    <p><b>Marital Status:</b> <%= @message.marital_status %> </p>
+    <p><b>Ethnic Group:</b> <%= @message.ethnic_group %> </p>
+    <p><b>Graduate?</b> <%= @message.graduate %> </p>
 
     <h3>ADDRESS</h3>
-    <p>: <%= @message.address1 %> </p>
-    <p>: <%= @message.suburb %> </p>
-    <p>: <%= @message.postal_code %> </p>
-    <p>: <%= @message.period_at_address %> </p>
-    <p>: <%= @message.residential_status %> </p>
+    <p><b>Address:</b> <%= @message.address1 %> </p>
+    <p><b>Suburb:</b> <%= @message.suburb %> </p>
+    <p><b>Post Code:</b> <%= @message.postal_code %> </p>
+    <p><b>Period at Address:</b> <%= @message.period_at_address %> </p>
+    <p><b>Status:</b> <%= @message.residential_status %> </p>
 
     <h3>EMPLOYMENT</h3>
-    <p>: <%= @message.employment_status %> </p>
-    <p>: <%= @message.period_in_job %> </p>
-    <p>: <%= @message.work_phone %> </p>
-    <p>: <%= @message.employer_name_and_address %> </p>
-    <p>: <%= @message.occupation %> </p>
+    <p><b>Status:</b> <%= @message.employment_status %> </p>
+    <p><b>Period in Job:</b> <%= @message.period_in_job %> </p>
+    <p><b>Work Phone No:</b> <%= @message.work_phone %> </p>
+    <p><b>Employer Name and Address:</b> <%= @message.employer_name_and_address %> </p>
+    <p><b>Occupation:</b> <%= @message.occupation %> </p>
 
     <h3>AFFORDABILITY</h3>
-    <p>: <%= @message.gross_salary %> </p>
-    <p>: <%= @message.other_income %> </p>
-    <p>: <%= @message.nett_salary %> </p>
-    <p>: <%= @message.monthly_expenses %> </p>
-    <p>: <%= @message.rent_or_bond %> </p>
+    <p><b>Gross Salary:</b> <%= @message.gross_salary %> </p>
+    <p><b>Other Income:</b> <%= @message.other_income %> </p>
+    <p><b>Nett Salary:</b> <%= @message.nett_salary %> </p>
+    <p><b>Monthly Expenses:</b> <%= @message.monthly_expenses %> </p>
+    <p><b>Rent/Bond Payment:</b> <%= @message.rent_or_bond %> </p>
 
     <h3>RELATIVE/CLOSE FRIEND</h3>
-    <p>: <%= @message.relative_name %> </p>
-    <p>: <%= @message.relative_mobile %> </p>
-    <p>: <%= @message.relative_residential_address %> </p>
-    <p>: <%= @message.relative_post_code %> </p>
-    <p>: <%= @message.relative_relationship %> </p>
+    <p><b>Name:</b> <%= @message.relative_name %> </p>
+    <p><b>Mobile:</b> <%= @message.relative_mobile %> </p>
+    <p><b>Residential Address:</b> <%= @message.relative_residential_address %> </p>
+    <p><b>Post Code:</b> <%= @message.relative_post_code %> </p>
+    <p><b>Relationship:</b> <%= @message.relative_relationship %> </p>
 
   </body>
 </html>

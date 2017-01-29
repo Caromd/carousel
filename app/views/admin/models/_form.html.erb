@@ -1,3 +1,4 @@
+<div class="container" >
 <%= form_for [:admin,@model] do |f| %>
   <% if @model.errors.any? %>
     <div id="error_explanation">
@@ -20,20 +21,20 @@
     $('label').addClass('active')
   </script>
 
-  <h4>MANAGE MODEL</h4>
-    <div class="row">
-      <div class="input-field col m6 s12">
-        <%= f.label :make_id, class: "active" %>
-        <%= f.collection_select :make_id, @makes, :id, :name %>
-      </div>
-
-      <div class="input-field col m6 s12">
-        <%= f.label :name, class: "active" %>
-        <%= f.text_field :name %>
-      </div>
+  <h5>MANAGE MODEL</h5>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :make_id, class: "active" %>
+      <%= f.collection_select :make_id, @makes, :id, :name %>
     </div>
-<br>
-  <button class="waves-effect waves-light btn-large">
+
+    <div class="input-field col s12">
+      <%= f.label :name, class: "active" %>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <button class="waves-effect waves-light btn">
     <%= f.submit "Save" %>
   </button>
 <% end %>
+</div>

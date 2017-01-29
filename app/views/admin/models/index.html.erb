@@ -1,12 +1,15 @@
-<%= link_to 'New Model', new_admin_model_path, class: "waves-effect indigo darken-2 btn" %>
-<h1 class="centralise">MODELS</h1>
+<div class="container">
+<h5>MODELS
+<%= link_to new_admin_model_path do %>
+  <i class="material-icons">add</i>
+<% end %>
+</h5>
 
-<table>
+<table class="bordered highlight">
   <thead>
     <tr>
       <th>Make</th>
       <th>Name</th>
-      <th>Actions</th>
     </tr>
   </thead>
 
@@ -15,8 +18,8 @@
       <tr>
         <td><%= model.make.name %></td>
         <td><%= model.name %></td>
-        <td><%= link_to 'Edit',  edit_admin_model_path(model), class: "waves-effect indigo darken-2 btn" %></td>
-        <td><%= link_to 'Delete', admin_model_path(model), class: "waves-effect indigo darken-2 btn", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to edit_admin_model_path(model) do %><i class="material-icons">edit</i><% end %></td>
+        <td><%= link_to admin_model_path(model), method: :delete, data: { confirm: 'Are you sure?' }  do%><i class="material-icons">delete</i><% end %></td>
       </tr>
     <% end %>
   </tbody>
