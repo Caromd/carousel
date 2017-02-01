@@ -1,3 +1,3 @@
-$(document).ready ->
-  $('select').material_select
-  return
+# $(document).ready ->
+#   $('select').material_select
+#   return
