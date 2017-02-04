@@ -2,7 +2,7 @@
   <div class="col s12 m7">
     <div class="card">
       <div class="card-image">
-        <%= image_tag attachment_url(@vehicle, :image, :fill,459, 343, format: "jpg") %>
+        <%= attachment_image_tag(@vehicle, :image, :fill,459, 343, format: "jpg", fallback: "defaultimage.jpg") %>
       </div>
     </div>
   </div>
@@ -28,9 +28,9 @@
         <span class="card-title">Specifications</span>
         <ul class="collection">
           <li class="collection-item grey-text"><%= @vehicle.vehicle_type %></li>
-          <li class="collection-item grey-text"><%= @vehicle.drive %></li>
+          <li class="collection-item grey-text"><%= @vehicle.drive %> Drive</li>
           <li class="collection-item grey-text"><%= @vehicle.transmission %></li>
-          <li class="collection-item grey-text"><%= @vehicle.paint_colour.name %> exterior</li>
+          <% unless @vehicle.paint_colour_id.nil? %><li class="collection-item grey-text"><%= @vehicle.paint_colour.name %> exterior</li><% end %>
           <li class="collection-item grey-text"><%= @vehicle.interior_colour.name %> interior</li>
           <% if @vehicle.full_service_history? %> <li class="collection-item grey-text">Full Service History</li><% end %>
           <% if @vehicle.low_kilometers? %> <li class="collection-item grey-text">Low Kilometres</li><% end %>

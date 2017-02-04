@@ -25,8 +25,10 @@
       <%= f.search_field :year_gteq %>
     </div>
     <div class="valign col m2 s6">
-    <button class="waves-effect waves-light btn">
-      <%= f.submit "Search" %>
+    <button class="btn-floating waves-effect waves-light red darken-4">
+      <%= f.submit "GO" do %>
+      <i class="material-icons">send</i>
+      <% end %>
     </button>
     </div>
   </div>
@@ -36,14 +38,13 @@
 <div class="row">
 <% @vehicles.each do |vehicle| %>
 
-  <div class="col s12 m4">
+  <div class="col l4 m6 s12">
     <div class="card z-depth-4">
       <div class="card-image">
-        <%= image_tag attachment_url(vehicle, :image, format: "jpg") %>
+        <%= attachment_image_tag(vehicle, :image, format: "jpg", fallback: "defaultimage.jpg") %>
         <span class="card-title"><%= vehicle.make.name + " " + vehicle.model.name +  " " + vehicle.displacement  + " " + vehicle.derivative + " " + vehicle.year  %></span>
       </div>
       <div class="card-content">
-        <p class="indigo-text"><b><%= vehicle.description %></b></p>
         <h5 class="red-text text-darken-4">R <%= vehicle.price %><h5>
         <h6><%= vehicle.mileage %> km</h6>
       </div>
