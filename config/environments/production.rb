@@ -83,8 +83,8 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
     address: "mail.carouselmotorgroup.co.za",
-    port: '25',
-    domain: ENV["AFRIHOST_DOMAIN"],
+    port: 25,
+    domain: "carouselmotorgroup.herokuapp.com",
     authentication: :plain,
     enable_starttls_auto: false,
     openssl_verify_mode: 'none',
