@@ -86,7 +86,7 @@ Rails.application.configure do
     port: 587,
     domain: ENV["AFRIHOST_DOMAIN"],
     authentication: :plain,
-    enable_starttls_auto: false,
+    enable_starttls_auto: true,
     user_name: ENV["AFRIHOST_USERNAME"],
     password: ENV["AFRIHOST_PASSWORD"]
   }
