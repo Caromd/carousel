@@ -87,6 +87,7 @@ Rails.application.configure do
     domain: ENV["AFRIHOST_DOMAIN"],
     authentication: :plain,
     enable_starttls_auto: true,
+    openssl_verify_mode: 'none',
     user_name: ENV["AFRIHOST_USERNAME"],
     password: ENV["AFRIHOST_PASSWORD"]
   }
