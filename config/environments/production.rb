@@ -83,7 +83,7 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
     address: "mail.carouselmotorgroup.co.za",
-    port: 587,
+    port: '25',
     domain: ENV["AFRIHOST_DOMAIN"],
     authentication: :plain,
     enable_starttls_auto: false,
