@@ -82,11 +82,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    address: "mail.carouselmotorgroup.co.za",
+    address: "smtp.afrihost.co.za",
     port: 587,
     domain: ENV["AFRIHOST_DOMAIN"],
     authentication: :plain,
-    enable_starttls_auto: true,
+    enable_starttls_auto: false,
     user_name: ENV["AFRIHOST_USERNAME"],
     password: ENV["AFRIHOST_PASSWORD"]
   }
