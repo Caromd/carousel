@@ -186,12 +186,25 @@
       </div>
     </div>
 
-   <!--/form-->
     <div class="row">
       <div class="col s12">
         <h5>Image</h5>
-        <%= f.attachment_field :image %>
-        <%= image_tag attachment_url(@vehicle, :image, :fill, 459, 343, format: "jpg") %>
+        <%= f.attachinary_file_field :photo1 %>
+        <% if @vehicle.photo1.present? %>
+          <%= cl_image_tag(@vehicle.photo1.path, { size: '200x200', crop: :fit }) %>
+        <% end %>
+        <%= f.attachinary_file_field :photo2 %>
+        <% if @vehicle.photo2.present? %>
+          <%= cl_image_tag(@vehicle.photo2.path, { size: '200x200', crop: :fit }) %>
+        <% end %>
+        <%= f.attachinary_file_field :photo3 %>
+        <% if @vehicle.photo3.present? %>
+          <%= cl_image_tag(@vehicle.photo3.path, { size: '200x200', crop: :fit }) %>
+        <% end %>
+        <%= f.attachinary_file_field :photo4 %>
+        <% if @vehicle.photo4.present? %>
+          <%= cl_image_tag(@vehicle.photo4.path, { size: '200x200', crop: :fit }) %>
+        <% end %>
       </div>
     </div>
 

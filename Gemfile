@@ -23,8 +23,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
-gem "refile", require: "refile/rails"
-gem "refile-mini_magick"
+ gem "refile", require: "refile/rails"
+ gem "refile-mini_magick"
+gem 'cloudinary'
+gem 'attachinary'
 gem 'materialize-sass'
 gem 'jquery-turbolinks'
 gem 'ransack', '~> 1.7'

@@ -30,6 +30,45 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: attachinary_files; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE attachinary_files (
+    id integer NOT NULL,
+    attachinariable_id integer,
+    attachinariable_type character varying,
+    scope character varying,
+    public_id character varying,
+    version character varying,
+    width integer,
+    height integer,
+    format character varying,
+    resource_type character varying,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: attachinary_files_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE attachinary_files_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: attachinary_files_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE attachinary_files_id_seq OWNED BY attachinary_files.id;
+
+
+--
 -- Name: interior_colours; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -333,6 +372,13 @@ ALTER SEQUENCE vehicles_id_seq OWNED BY vehicles.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY attachinary_files ALTER COLUMN id SET DEFAULT nextval('attachinary_files_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY interior_colours ALTER COLUMN id SET DEFAULT nextval('interior_colours_id_seq'::regclass);
 
 
@@ -383,6 +429,14 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 --
 
 ALTER TABLE ONLY vehicles ALTER COLUMN id SET DEFAULT nextval('vehicles_id_seq'::regclass);
+
+
+--
+-- Name: attachinary_files_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY attachinary_files
+    ADD CONSTRAINT attachinary_files_pkey PRIMARY KEY (id);
 
 
 --
@@ -447,6 +501,13 @@ ALTER TABLE ONLY users
 
 ALTER TABLE ONLY vehicles
     ADD CONSTRAINT vehicles_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: by_scoped_parent; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX by_scoped_parent ON attachinary_files USING btree (attachinariable_type, attachinariable_id, scope);
 
 
 --
@@ -590,4 +651,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170114110511');
 INSERT INTO schema_migrations (version) VALUES ('20170116172316');
 
 INSERT INTO schema_migrations (version) VALUES ('20170204073156');
+
+INSERT INTO schema_migrations (version) VALUES ('20170207123140');
 

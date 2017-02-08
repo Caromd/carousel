@@ -19,6 +19,9 @@
   <tbody>
     <% @vehicles.each do |vehicle| %>
       <tr>
+        <% if vehicle.photo1.present? %>
+        <td><%= cl_image_tag(vehicle.photo1.path, width: 50) %></td>
+        <% end %>
         <td><%= vehicle.make.name %></td>
         <td><%= vehicle.model.name %></td>
         <td><%= vehicle.derivative %></td>

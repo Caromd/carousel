@@ -41,7 +41,12 @@
   <div class="col l4 m6 s12">
     <div class="card z-depth-4">
       <div class="card-image">
-        <%= attachment_image_tag(vehicle, :image, format: "jpg", fallback: "defaultimage.jpg") %>
+        <!--%= attachment_image_tag(vehicle, :image, format: "jpg", fallback: "defaultimage.jpg") %-->
+        <% if vehicle.photo1.present? %>
+        <%= cl_image_tag(vehicle.photo1.path, { size: '250x250', crop: :fit , fallback: "defaultimage.jpg"}) %>
+        <% else %>
+        <%= image_tag("defaultimage.jpg") %>
+        <% end %>
         <span class="card-title"><%= vehicle.make.name + " " + vehicle.model.name +  " " + vehicle.displacement  + " " + vehicle.derivative + " " + vehicle.year  %></span>
       </div>
       <div class="card-content">

@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require cloudinary/jquery.cloudinary
+//= require attachinary
 //= require turbolinks
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
