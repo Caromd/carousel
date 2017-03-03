@@ -48,14 +48,14 @@
       <div class="card-content white-text">
         <span class="card-title">Specifications</span>
         <ul class="collection">
-          <% unless @vehicle.vehicle_type.nil? %><li class="collection-item grey-text"><%= @vehicle.vehicle_type %></li><% end %>
+          <% unless @vehicle.vehicle_type.blank? %><li class="collection-item grey-text"><%= @vehicle.vehicle_type %></li><% end %>
           <% unless @vehicle.drive.blank? %><li class="collection-item grey-text"><%= @vehicle.drive %> Drive</li><% end %>
-          <% unless @vehicle.transmission.nil? %><li class="collection-item grey-text"><%= @vehicle.transmission %></li><% end %>
+          <% unless @vehicle.transmission.blank? %><li class="collection-item grey-text"><%= @vehicle.transmission %></li><% end %>
           <% unless @vehicle.paint_colour_id.nil? %><li class="collection-item grey-text"><%= @vehicle.paint_colour.name %> exterior</li><% end %>
           <% unless @vehicle.interior_colour_id.nil? %><li class="collection-item grey-text"><%= @vehicle.interior_colour.name %> interior</li><% end %>
           <% if @vehicle.full_service_history? %> <li class="collection-item grey-text">Full Service History</li><% end %>
           <% if @vehicle.low_kilometers? %> <li class="collection-item grey-text">Low Kilometres</li><% end %>
-          <% unless @vehicle.stock_number.nil? %><li class="collection-item grey-text">Stock number: <%= @vehicle.stock_number %></li><% end %>
+          <% unless @vehicle.stock_number.blank? %><li class="collection-item grey-text">Stock number: <%= @vehicle.stock_number %></li><% end %>
         </ul>
       </div>
     </div>
