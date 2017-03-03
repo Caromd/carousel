@@ -49,7 +49,7 @@
         <span class="card-title">Specifications</span>
         <ul class="collection">
           <% unless @vehicle.vehicle_type.nil? %><li class="collection-item grey-text"><%= @vehicle.vehicle_type %></li><% end %>
-          <% unless @vehicle.drive.nil? %><li class="collection-item grey-text"><%= @vehicle.drive %> Drive</li><% end %>
+          <% unless @vehicle.drive.blank? %><li class="collection-item grey-text"><%= @vehicle.drive %> Drive</li><% end %>
           <% unless @vehicle.transmission.nil? %><li class="collection-item grey-text"><%= @vehicle.transmission %></li><% end %>
           <% unless @vehicle.paint_colour_id.nil? %><li class="collection-item grey-text"><%= @vehicle.paint_colour.name %> exterior</li><% end %>
           <% unless @vehicle.interior_colour_id.nil? %><li class="collection-item grey-text"><%= @vehicle.interior_colour.name %> interior</li><% end %>
