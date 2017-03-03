@@ -52,7 +52,7 @@
           <li class="collection-item grey-text"><%= @vehicle.drive %> Drive</li>
           <li class="collection-item grey-text"><%= @vehicle.transmission %></li>
           <% unless @vehicle.paint_colour_id.nil? %><li class="collection-item grey-text"><%= @vehicle.paint_colour.name %> exterior</li><% end %>
-          <li class="collection-item grey-text"><%= @vehicle.interior_colour.name %> interior</li>
+          <% unless @vehicle.interior_colour_id.nil? %><li class="collection-item grey-text"><%= @vehicle.interior_colour.name %> interior</li><% end %>
           <% if @vehicle.full_service_history? %> <li class="collection-item grey-text">Full Service History</li><% end %>
           <% if @vehicle.low_kilometers? %> <li class="collection-item grey-text">Low Kilometres</li><% end %>
           <li class="collection-item grey-text">Stock number: <%= @vehicle.stock_number %></li>
