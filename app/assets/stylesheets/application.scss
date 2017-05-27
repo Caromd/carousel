@@ -13,9 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
  @import "materialize/components/color";
- $primary-color: color("grey", "darken-1") !default;
- $secondary-color: color("red", "darken-4") !default;
+
+ $primary-color: rgba(19, 52, 87, 1) !default;
+ $secondary-color: color("red", "darken-1") !default;
 
  @import "materialize";
  @import "materialize/extras/nouislider";
+
+ nav {height: 112px;  vertical-align: bottom;}
+ #nav-mobile li a {height: 112px;  vertical-align: middle; margin: 0; padding-top: 26px;}
+ #call {height: 112px; vertical-align: middle; margin: 0; padding-top: 26px; color: red;}
+ #menu {padding-top: 26px;}
+ footer {font-size: 80%;}
+ thead { border: none }
+ td {padding: 0;}
+ html {font-family: Lato, GillSans, Calibri, Trebuchet, sans-serif;}
+ li a{ color: $secondary-color;}

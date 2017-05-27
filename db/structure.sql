@@ -345,7 +345,8 @@ CREATE TABLE vehicles (
     mp3 boolean,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    image_id character varying
+    image_id character varying,
+    pre_order_indicator boolean
 );
 
 
@@ -653,4 +654,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170116172316');
 INSERT INTO schema_migrations (version) VALUES ('20170204073156');
 
 INSERT INTO schema_migrations (version) VALUES ('20170207123140');
+
+INSERT INTO schema_migrations (version) VALUES ('20170527153106');
 

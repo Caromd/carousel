@@ -6,34 +6,31 @@
   <script>
     $('label').addClass('active')
   </script>
-<br>
-
-
-<div class="card z-depth-4 ">
-<%= search_form_for @q do |f| %>
-  <div class="row valign-wrapper">
-    <div class="input-field col s12 m3">
-      <%= f.label :price_lteq, "Price (less than)", class: "active" %>
-      <%= f.search_field :price_lteq %>
+<!--
+<div class="card blue-grey lighten-5">
+  <%= search_form_for @q do |f| %>
+    <div class="row">
+      <div class="input-field col s6 m4">
+        <%= f.label :price_lteq, "Price (less than)", class: "active red-text text-darken-1" %>
+        <%= f.search_field :price_lteq %>
+      </div>
+      <div class="input-field col s6 m4">
+        <%= f.label :mileage_lteq, "Mileage (less than)",  class: "active red-text text-darken-1" %>
+        <%= f.search_field :mileage_lteq %>
+      </div>
+      <div class="input-field col s6 m4">
+        <%= f.label :year_gteq, "Year (from)" , class: "active red-text text-darken-1" %>
+        <%= f.search_field :year_gteq %>
+      </div>
+      <div class="card-action">
+        <div class="waves-effect waves-light btn">
+          <%= f.submit "SEARCH" %>
+        </div>
+      </div>
     </div>
-    <div class="input-field col s12 m3">
-      <%= f.label :mileage_lteq, "Mileage (less than)",  class: "active" %>
-      <%= f.search_field :mileage_lteq %>
-    </div>
-    <div class="input-field col s12 m3">
-      <%= f.label :year_gteq, "Year (from)" , class: "active" %>
-      <%= f.search_field :year_gteq %>
-    </div>
-    <div class="valign col m2 s6">
-    <button class="btn-floating waves-effect waves-light red darken-4">
-      <%= f.submit "GO" do %>
-      <i class="material-icons">send</i>
-      <% end %>
-    </button>
-    </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
+</-->
 
 <div class="row">
 <% @vehicles.each do |vehicle| %>
@@ -43,13 +40,13 @@
       <div class="card-image">
         <!--%= attachment_image_tag(vehicle, :image, format: "jpg", fallback: "defaultimage.jpg") %-->
         <% if vehicle.photo1.present? %>
-        <%= cl_image_tag(vehicle.photo1.path, { size: '250x250', crop: :fit , fallback: "defaultimage.jpg"}) %>
+          <%= cl_image_tag(vehicle.photo1.path, { size: '250x250', crop: :fit , fallback: "defaultimage.jpg"}) %>
         <% else %>
-        <%= image_tag("defaultimage.jpg") %>
+          <%= image_tag("defaultimage.jpg") %>
         <% end %>
-        <span class="card-title"><%= vehicle.make.name + " " + vehicle.model.name +  " " + vehicle.displacement  + " " + vehicle.derivative + " " + vehicle.year  %></span>
       </div>
       <div class="card-content">
+        <h6><%= vehicle.make.name + " " + vehicle.model.name +  " " + vehicle.displacement  + " " + vehicle.derivative + " " + vehicle.year  %></h6>
         <h5 class="red-text text-darken-4">R <%= vehicle.price %><h5>
         <h6><%= vehicle.mileage %> km</h6>
       </div>

@@ -186,6 +186,16 @@
       </div>
     </div>
 
+    <br>
+    <h5>Pre-order?</h5>
+
+    <div class="row">
+      <div class="input-field col m6 s6">
+        <%= f.check_box :pre_order_indicator, class: "filled-in", id: "pre_order_indicator" %>
+        <%= f.label :pre_order_indicator, "Mark for pre-order vehicle", for: "pre_order_indicator", id: "pre_order_indicator" %>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col s12">
         <h5>Image</h5>

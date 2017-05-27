@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<%= form_for @contact, url: contact_path do |f| %>
+
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+  </script>
+  <script>
+    $('label').addClass('active')
+  </script>
+
+  <br>
+  <h4>CONTACT US</h4>
+
+
+  <div class="row">
+    <div class="input-field col m6 s9">
+      <%= f.label :name, "*Full Name", class: "active indigo-text" %>
+      <%= f.text_field :name, required: true %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s4 m2">
+      <%= f.text_field :phone , required: true %>
+      <%= f.label :phone, "*Phone", class: "active indigo-text" %>
+    </div>
+  </div>
+
+
+  <button class="waves-effect waves-light btn-large">
+    <%= f.submit "Send" %><i class="material-icons right">send</i>
+  </button>
+
+<% end %>

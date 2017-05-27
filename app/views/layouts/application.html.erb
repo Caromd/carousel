@@ -7,30 +7,39 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= favicon_link_tag 'favicon.ico' %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <%= csrf_meta_tags %>
 </head>
 
 <body>
   <script>
-    $( document ).ready(function) block
+    $( document ).ready(function) {
+      $(".button-collapse").sideNav();
       $(".dropdown-button").dropdown();
+    }
   </script>
   <div class="container">
     <header>
-      <ul id="dropdown1" class="dropdown-content">
-        <li><%= link_to "How It Works", howitworks_path, class: "grey-text text-darken-4" %></li>
-        <li><%= link_to "Services", services_path, class: "grey-text text-darken-4" %></li>
-        <li><%= link_to "Contact", contact_path, class: "grey-text text-darken-4" %></li>
-        <li><%= link_to "Vehicles", vehicles_path, class: "grey-text text-darken-4" %></li>
+      <ul id="dropdown1" class="dropdown-content right">
+        <li><%= link_to "SHOWROOM", vehicles_path %></li>
+        <li><%= link_to "PRE-ORDER", howitworks_path %></li>
+        <li><%= link_to "HOW IT WORKS", howitworks_path %></li>
+        <li><%= link_to "CONTACT", new_contact_path %></li>
       </ul>
       <nav>
-        <div class="nav-wrapper grey lighten-3 z-depth-4">
-          <%= link_to "CAROUSEL", vehicles_path, class: "brand-logo red-text text-darken-4 text-extra-large text-bold" %>
-          <ul class="right">
-            <!-- Dropdown Trigger -->
-            <li><a class="dropdown-button red-text text-darken-4" href="#!" data-activates="dropdown1">MENU<i class="material-icons right">arrow_drop_down</i></a></li>
+        <div class="nav-wrapper">
+          <%= link_to image_tag("logo.jpg", alt: "Carousel"), vehicles_path, class: "brand-logo hide-on-med-and-down" %>
+          <%= link_to image_tag("logo_small.jpg", alt: "Carousel"), vehicles_path, class: "brand-logo center hide-on-large-only" %>
+          <a href="#" data-activates="mobile-demo" class="button-collapse">
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><%= link_to "SHOWROOM", vehicles_path %></li>
+            <li><%= link_to "PRE-ORDER", howitworks_path %></li>
+            <li><%= link_to "HOW IT WORKS", howitworks_path %></li>
+            <li><%= link_to "CONTACT", new_contact_path %></li>
+            <!--li><p id="call">Call: 021 713 0444&nbsp;&nbsp;</p></li-->
           </ul>
+          <ul class="dropdown-button" id="mobile-demo" href="#!" data-activates="dropdown1"><i id="menu" class="material-icons">more_vert</i></a></a></ul>
         </div>
       </nav>
     </header>
@@ -42,11 +51,58 @@
       <%= yield %>
     </main>
 
-    <footer class="page-footer">
+    <footer class="page-footer blue-grey lighten-5">
+      <div class="row hide-on-med-and-down">
+        <div class="col s3">
+          <div class="card">
+            <div class="card-image"><%= image_tag "logo_wesbank" %></div>
+          </div>
+        </div>
+        <div class="col s3">
+          <div class="card">
+            <div class="card-image"><%= image_tag "logo_mfc" %></div>
+          </div>
+        </div>
+        <div class="col s3">
+          <div class="card">
+            <div class="card-image"><%= image_tag "logo_standard_bank" %></div>
+          </div>
+        </div>
+        <div class="col s3">
+          <div class="card">
+            <div class="card-image"><%= image_tag "logo_absa" %></div>
+          </div>
+        </div>
+      </div>
       <div class="row">
-        <div class="col m12 s12">
-          <p class="col m10 s12 grey-text text-lighten-4">237 Main Road, Diep River, Cape Town, 7945</p>
-          <p class="col m2 s12 grey-text text-lighten-4"> 021 713 0444 <i class="tiny material-icons">call</i></p>
+        <div class="col s12 m3 center">
+          <ul>
+            <li><h6>VEHICLES</h6></li>
+            <li><%= link_to "Used Vehicles", vehicles_path %></li>
+            <li><%= link_to "Pre-order Vehicles", vehicles_path %></li>
+          </ul>
+        </div>
+        <div class="col s12 m3 center">
+          <ul>
+            <li><h6>FINANCE SERVICES</h6></li>
+            <li>Vehicle Finance</li>
+            <li>Private Sale Finance</li>
+            <li>Refinancing</li>
+          </ul>
+        </div>
+        <div class="col s12 m3 center">
+          <ul>
+            <li><h6>SERVICES</h6></li>
+            <li>Vehicle Leasing</li>
+            <li>Insurance</li>
+            <li>Service Plans</li>
+          </ul>
+        </div>
+        <div class="col s12 m3 center">
+          <ul>
+            <li><h6><%= link_to "CONTACT US", new_contact_path %></h6></li>
+            <li>021 713 0444</li>
+          </ul>
         </div>
       </div>
     </footer>

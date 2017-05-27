@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<%= form_for @message, url: contact_path do |f| %>
+<%= form_for @message, url: apply_path do |f| %>
 
   <script>
     $(document).ready(function() {
@@ -151,23 +151,23 @@
   <h5>Affordability</h5>
 
   <div class="row">
-    <div class="input-field col m2 s4">
+    <div class="input-field col l2 m3 s6">
       <%= f.label :gross_salary, "Gross Salary", class: "active" %>
       <%= f.text_field :gross_salary %>
     </div>
-    <div class="input-field col m2 s4">
+    <div class="input-field col l2 m3 s6">
       <%= f.label :other_income, "Other Income", class: "active" %>
       <%= f.text_field :other_income %>
     </div>
-    <div class="input-field col m2 s4">
+    <div class="input-field col l2 m3 s6">
       <%= f.label :nett_salary, "Nett Salary", class: "active" %>
       <%= f.text_field :nett_salary %>
     </div>
-    <div class="input-field col m2 s4">
+    <div class="input-field col l2 m3 s6">
       <%= f.label :monthly_expenses, "Monthly Expenses", class: "active" %>
       <%= f.text_field :monthly_expenses %>
     </div>
-    <div class="input-field col m2 s4">
+    <div class="input-field col l2 m3 s6">
       <%= f.label :rent_or_bond, "Rent/Bond Payment", class: "active" %>
       <%= f.text_field :rent_or_bond %>
     </div>

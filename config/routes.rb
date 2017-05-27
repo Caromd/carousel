@@ -16,11 +16,14 @@ mount Attachinary::Engine => "/attachinary"
 
 	devise_for :users
   resources :messages
-  get 'contact', to: 'messages#new', as: 'contact'
-  post 'contact', to: 'messages#create'
+  get 'apply', to: 'messages#new', as: 'apply'
+  post 'apply', to: 'messages#create'
 
-  get '/services' => 'pages#services'
+  resources :contacts, only: [:new, :create]
+  get 'contact', to: 'contacts#new'
+  post 'contact', to: 'contacts#create'
+
+
   get '/howitworks' => 'pages#howitworks'
-  get '/contact' => 'pages#contact'
 
 end

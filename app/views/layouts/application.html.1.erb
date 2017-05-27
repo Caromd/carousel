@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <script>
+    $( document ).ready(function) block
+      $(".dropdown-button").dropdown();
+  </script>
+  <div class="container">
+    <header>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><%= link_to "How It Works", howitworks_path, class: "grey-text text-darken-4" %></li>
+        <li><%= link_to "Services", services_path, class: "grey-text text-darken-4" %></li>
+        <li><%= link_to "Contact", contact_path, class: "grey-text text-darken-4" %></li>
+        <li><%= link_to "Vehicles", vehicles_path, class: "grey-text text-darken-4" %></li>
+      </ul>
+      <nav>
+        <div class="nav-wrapper">
+          <%= link_to image_tag("logo.jpg", alt: "Carousel"), vehicles_path, class: "brand-logo" %>
+
+          <ul class="right">
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-button red-text text-darken-4" href="#!" data-activates="dropdown1">MENU<i class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <% if notice %><p class="green-text text-darken-2"><%= notice %></p><% end %>
+    <% if alert %><p class="red-text text-darken-2"><%= alert %></p><% end %>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer class="page-footer">
+      <div class="row">
+        <div class="col m12 s12">
+          <p class="col m10 s12 grey-text text-lighten-4">237 Main Road, Diep River, Cape Town, 7945</p>
+          <p class="col m2 s12 grey-text text-lighten-4"> 021 713 0444 <i class="tiny material-icons">call</i></p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
