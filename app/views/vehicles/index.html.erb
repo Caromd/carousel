@@ -1,36 +1,36 @@
-  <script>
-    $(document).ready(function() {
-      $('select').material_select();
-    });
-  </script>
-  <script>
-    $('label').addClass('active')
-  </script>
-<!--
-<div class="card blue-grey lighten-5">
-  <%= search_form_for @q do |f| %>
-    <div class="row">
-      <div class="input-field col s6 m4">
-        <%= f.label :price_lteq, "Price (less than)", class: "active red-text text-darken-1" %>
-        <%= f.search_field :price_lteq %>
-      </div>
-      <div class="input-field col s6 m4">
-        <%= f.label :mileage_lteq, "Mileage (less than)",  class: "active red-text text-darken-1" %>
-        <%= f.search_field :mileage_lteq %>
-      </div>
-      <div class="input-field col s6 m4">
-        <%= f.label :year_gteq, "Year (from)" , class: "active red-text text-darken-1" %>
-        <%= f.search_field :year_gteq %>
-      </div>
-      <div class="card-action">
-        <div class="waves-effect waves-light btn">
-          <%= f.submit "SEARCH" %>
-        </div>
-      </div>
-    </div>
-  <% end %>
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+<script>
+  $('label').addClass('active')
+</script>
+
+<div class="row" id="search-box">
+<div class="col s12 blue-grey lighten-5">
+<%= search_form_for @q do |f| %>
+
+          <div class="input-field col s6 m3">
+            <%= f.search_field :price_lteq, placeholder: "Price (less than)", class: "active input_field" %>
+            <%#= f.label :price_lteq, "Price (less than)", class: "active red-text text-darken-1" %>
+          </div>
+          <div class="input-field col s6 m3">
+            <%= f.search_field :mileage_lteq, placeholder: "Mileage (less than)", class: "active input_field" %>
+            <%#= f.label :mileage_lteq, "Mileage (less than)",  class: "active red-text text-darken-1" %>
+          </div>
+          <div class="input-field col s6 m3">
+            <%= f.search_field :year_gteq, placeholder: "Year (from)", class: "active input_field" %>
+            <%#= f.label :year_gteq, "Year (from)" , class: "active red-text text-darken-1" %>
+          </div>
+          <div class="col s6 m3 center valign" id="search-button">
+          <div class="waves-effect waves-light btn center">
+            <%= f.submit "SEARCH" %>
+          </div>
+          </div>
+<% end %>
 </div>
-</-->
+</div>
 
 <div class="row">
 <% @vehicles.each do |vehicle| %>

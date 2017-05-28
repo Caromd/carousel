@@ -15,22 +15,49 @@
 
 
   <div class="row">
-    <div class="input-field col m6 s9">
-      <%= f.label :name, "*Full Name", class: "active indigo-text" %>
-      <%= f.text_field :name, required: true %>
+    <div class="card col m6 s12">
+      <div class="card-content">
+        <div class="input-field">
+          <%= f.label :name, "*Name", class: "active" %>
+          <%= f.text_field :name, required: true %>
+        </div>
+        <div class="input-field">
+          <%= f.text_field :phone , required: true %>
+          <%= f.label :phone, "*Contact Number", class: "active" %>
+        </div>
+        <div class="input-field">
+          <%= f.text_field :email %>
+          <%= f.label :email, "Email", class: "active" %>
+        </div>
+        <div class="input-field">
+          <%= f.text_area :interested_in, placeholder: "I am interested in..."%>
+          <br>
+        </div>
+      </div>
+      <div class="card-action">
+        <button class="waves-effect waves-light btn">
+          <%= f.submit "Send" %><i class="material-icons right">send</i>
+        </button>
+      </div>
     </div>
+
+    <div class="card col m5 s12 offset-m1 center">
+      <br>
+      <div><%= image_tag @google_map %></div>
+      <div>
+        <ul>
+          <li>Carousel Motor Group</li>
+          <li>c/o Main & St Francis Road, Diep River, 7945</li>
+          <li>021 713 0444</li>
+          <li>info@carouselmotorgroup.co.za</li>
+        </ul>
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="row">
-    <div class="input-field col s4 m2">
-      <%= f.text_field :phone , required: true %>
-      <%= f.label :phone, "*Phone", class: "active indigo-text" %>
-    </div>
-  </div>
 
 
-  <button class="waves-effect waves-light btn-large">
-    <%= f.submit "Send" %><i class="material-icons right">send</i>
-  </button>
 
 <% end %>

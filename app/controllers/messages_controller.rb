@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.valid?
       MessageMailer.new_message(@message).deliver
-      redirect_to vehicles_path, notice: "Your application has been sent."
+      redirect_to vehicles_path, notice: "Your application has been sent to Carousel."
     else
       flash[:alert] = "An error occurred while delivering this message."
       render :new

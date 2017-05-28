@@ -14,26 +14,27 @@
   <h4>APPLICATION DETAILS</h4>
 
   <h5>Vehicle Information</h5>
+  <hr>
   <div class="row">
     <div class="input-field col m3 s6">
       <%= f.label :make, class: "active" %>
-      <%= f.text_field :make, value: @vehicle ? @vehicle.make.name : nil %>
+      <%= f.text_field :make, value: @vehicle ? @vehicle.make.name : nil rescue nil %>
     </div>
     <div class="input-field col m3 s6">
       <%= f.label :model, class: "active" %>
-      <%= f.text_field :model, value: @vehicle ? @vehicle.model.name : nil %>
+      <%= f.text_field :model, value: @vehicle ? @vehicle.model.name : nil rescue nil %>
     </div>
     <div class="input-field col m2 s3">
       <%= f.label :colour, "Colour", class: "active" %>
-      <%= f.text_field :colour, value: @vehicle ? @vehicle.paint_colour.name : nil %>
+      <%= f.text_field :colour, value: @vehicle ? @vehicle.paint_colour.name : nil rescue nil %>
     </div>
     <div class="input-field col m2 s3">
       <%= f.label :year, class: "active" %>
-      <%= f.text_field :year, value: @vehilce ? @vehicle.year : nil %>
+      <%= f.text_field :year, value: @vehilce ? @vehicle.year : nil rescue nil %>
     </div>
     <div class="input-field col m2 s3">
       <%= f.label :mileage, class: "active" %>
-      <%= f.text_field :mileage, value: @vehicle ? @vehicle.mileage : nil %>
+      <%= f.text_field :mileage, value: @vehicle ? @vehicle.mileage : nil rescue nil %>
     </div>
   </div>
   <div class="row">
@@ -52,6 +53,7 @@
   </div>
 
   <h5>Personal Information</h5>
+  <hr>
 
   <div class="row">
     <div class="input-field col m1 s3">
@@ -122,6 +124,7 @@
   </div>
 
   <h5>Employment</h5>
+  <hr>
 
   <div class="row">
     <div class="input-field col m3 s6">
@@ -149,6 +152,7 @@
   </div>
 
   <h5>Affordability</h5>
+  <hr>
 
   <div class="row">
     <div class="input-field col l2 m3 s6">
@@ -174,6 +178,7 @@
   </div>
 
   <h5>Relative/Close Friend</h5>
+  <hr>
 
   <div class="row">
     <div class="input-field col m6 s12">
@@ -199,7 +204,7 @@
   </div>
 
 
-  <button class="waves-effect waves-light btn-large">
+  <button class="waves-effect waves-light btn">
     <%= f.submit "Send" %><i class="material-icons right">send</i>
   </button>
 

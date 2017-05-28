@@ -64,7 +64,7 @@ class Admin::VehiclesController < Admin::BaseController
         :interior_colour, :displacement, :fuel_type, :transmission,
         :description, :full_service_history, :one_owner, :low_kilometers,
         :abs_brakes, :air_conditioning, :alarm, :alloy_wheels, :central_locking,
-        :electric_windows, :immobilizer, :power_steering, :airbags, :radio, :cd, :mp3,
+        :electric_windows, :immobilizer, :power_steering, :airbags, :radio, :cd, :mp3, :pre_order_indicator,
         :photo1, :photo2, :photo3, :photo4
         )
     end

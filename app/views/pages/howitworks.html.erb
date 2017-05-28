@@ -14,7 +14,7 @@
         </ul>
       </div>
       <div class="card-action">
-        <%= link_to "Vehicles for Sale", vehicles_path, class: "waves-effect waves-light btn" %>
+        <%= link_to "Vehicles for Sale", vehicles_path(pre_order: false), class: "waves-effect waves-light btn" %>
       </div>
     </div>
   </div>
@@ -67,7 +67,7 @@
         </ul>
       </div>
       <div class="card-action">
-        <%= link_to "Pre-order Vehicles", contact_path, class: "waves-effect waves-light btn" %>
+        <%= link_to "Pre-order Vehicles", vehicles_path(pre_order: true), class: "waves-effect waves-light btn" %>
       </div>
     </div>
   </div>

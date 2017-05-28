@@ -30,4 +30,6 @@
  thead { border: none }
  td {padding: 0;}
  html {font-family: Lato, GillSans, Calibri, Trebuchet, sans-serif;}
- li a{ color: $secondary-color;}
+ li a {color: $secondary-color;}
+ #search-box { width: 100%; margin: auto; margin-top: 8px;}
+ #search-button {margin: auto; padding-top: 20px; vertical-align: middle;}
