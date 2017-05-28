@@ -7,10 +7,10 @@ class VehiclesController < ApplicationController
     #@vehicles = Vehicle.all
     @q = Vehicle.ransack(params[:q])
     @vehicles = @q.result(distinct: true)
-    if params[:pre_order] == "false"
-      @vehicles = @vehicles.select{ |v| !v.pre_order_indicator }
-    else
+    if params[:type] == "pre-order"
       @vehicles = @vehicles.select{ |v| v.pre_order_indicator }
+    else
+      @vehicles = @vehicles.select{ |v| !v.pre_order_indicator }
     end
     @prices = %w(50000 100000 150000)
   end

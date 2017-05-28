@@ -22,8 +22,8 @@
   <div class="container">
     <header>
       <ul id="dropdown1" class="dropdown-content right">
-        <li><%= link_to "SHOWROOM", vehicles_path(pre_order: false) %></li>
-        <li><%= link_to "PRE-ORDER", vehicles_path(pre_order: true) %></li>
+        <li><%= link_to "SHOWROOM", vehicles_path(type: "showroom") %></li>
+        <li><%= link_to "PRE-ORDER", vehicles_path(type: "pre-order") %></li>
         <li><%= link_to "HOW IT WORKS", howitworks_path %></li>
         <li><%= link_to "CONTACT", new_contact_path %></li>
       </ul>
@@ -33,8 +33,8 @@
           <%= link_to image_tag("logo_small.jpg", alt: "Carousel"), vehicles_path, class: "brand-logo center hide-on-large-only" %>
           <a href="#" data-activates="mobile-demo" class="button-collapse">
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><%= link_to "SHOWROOM", vehicles_path(pre_order: false) %></li>
-            <li><%= link_to "PRE-ORDER", vehicles_path(pre_order: true) %></li>
+            <li><%= link_to "SHOWROOM", vehicles_path(type: "showroom") %></li>
+            <li><%= link_to "PRE-ORDER", vehicles_path(type: "pre-order") %></li>
             <li><%= link_to "HOW IT WORKS", howitworks_path %></li>
             <li><%= link_to "CONTACT", new_contact_path %></li>
             <!--li><p id="call">Call: 021 713 0444&nbsp;&nbsp;</p></li-->
@@ -78,8 +78,8 @@
         <div class="col s12 m3 center">
           <ul>
             <li><h6>VEHICLES</h6></li>
-            <li><%= link_to "Used Vehicles", vehicles_path(pre_order: false) %></li>
-            <li><%= link_to "Pre-order Vehicles", vehicles_path(pre_order: true) %></li>
+            <li><%= link_to "Used Vehicles", vehicles_path(type: "showroom") %></li>
+            <li><%= link_to "Pre-order Vehicles", vehicles_path(type: "pre-order") %></li>
           </ul>
         </div>
         <div class="col s12 m3 center">
